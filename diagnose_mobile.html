@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Layout Diagnostic</title>
+    <style>
+        body {
+            font-family: monospace;
+            font-size: 12px;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #00ff00;
+        }
+        .section {
+            margin-bottom: 30px;
+            border: 1px solid #333;
+            padding: 10px;
+            background: #0a0a0a;
+        }
+        .section h3 {
+            color: #ffff00;
+            margin-top: 0;
+        }
+        .property {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            margin: 2px 0;
+        }
+        .label {
+            color: #00aaff;
+        }
+        .value {
+            color: #00ff00;
+        }
+        .warning {
+            color: #ff0000;
+            font-weight: bold;
+        }
+        .info {
+            color: #ffff00;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mobile Dashboard Layout Diagnostic (375px)</h1>
+    <button onclick="runDiagnostic()" style="padding: 10px 20px; font-size: 14px;">Run Diagnostic</button>
+    <button onclick="window.open('http://localhost:3000', '_blank')" style="padding: 10px 20px; font-size: 14px; margin-left: 10px;">Open Dashboard</button>
+
+    <div id="results"></div>
+
+    <script>
+        async function runDiagnostic() {
+            const results = document.getElementById('results');
+            results.innerHTML = '<p class="info">Opening dashboard in iframe for inspection...</p>';
+
+            // Create hidden iframe to load dashboard
+            const iframe = document.createElement('iframe');
+            iframe.src = 'http://localhost:3000';
+            iframe.style.width = '375px';
+            iframe.style.height = '667px';
+            iframe.style.border = '1px solid #666';
+            iframe.style.display = 'block';
+            iframe.style.margin = '20px 0';
+
+            iframe.onload = () => {
+                try {
+                    const doc = iframe.contentDocument || iframe.contentWindow.document;
+
+                    // Wait for content to render
+                    setTimeout(() => {
+                        analyzeLayout(doc, results);
+                    }, 2000);
+                } catch (e) {
+                    results.innerHTML += `<p class="warning">Error: ${e.message}. Dashboard must be on same origin.</p>`;
+                }
+            };
+
+            document.body.appendChild(iframe);
+        }
+
+        function analyzeLayout(doc, resultsContainer) {
+            let html = '<h2>Diagnostic Results</h2>';
+
+            // List of selectors to inspect
+            const selectors = [
+                'body',
+                '.app',
+                '.sidebar',
+                '.main',
+                '.topbar',
+                '#page-content',
+                '.dashboard-grid',
+                '.hero-card',
+                '.overview-main',
+                '.overview-header',
+                '.overview-header h2',
+                '.overview-stats',
+                '.stat-card',
+                '.overview-aside',
+                '.connection-grid',
+                '.floating-dock'
+            ];
+
+            selectors.forEach(selector => {
+                const element = doc.querySelector(selector);
+                if (!element) {
+                    html += `<div class="section"><h3>${selector}</h3><p class="warning">NOT FOUND</p></div>`;
+                    return;
+                }
+
+                const rect = element.getBoundingClientRect();
+                const computed = window.getComputedStyle(element);
+
+                html += `<div class="section">`;
+                html += `<h3>${selector}</h3>`;
+
+                // Geometry
+                html += `<div class="property"><span class="label">x:</span><span class="value">${rect.x.toFixed(2)}px</span></div>`;
+                html += `<div class="property"><span class="label">y:</span><span class="value">${rect.y.toFixed(2)}px</span></div>`;
+                html += `<div class="property"><span class="label">width:</span><span class="value ${rect.width < 100 ? 'warning' : ''}">${rect.width.toFixed(2)}px</span></div>`;
+                html += `<div class="property"><span class="label">height:</span><span class="value">${rect.height.toFixed(2)}px</span></div>`;
+                html += `<div class="property"><span class="label">right:</span><span class="value ${rect.right > 375 ? 'warning' : ''}">${rect.right.toFixed(2)}px</span></div>`;
+
+                // Width properties
+                html += `<div class="property"><span class="label">offsetWidth:</span><span class="value">${element.offsetWidth}px</span></div>`;
+                html += `<div class="property"><span class="label">clientWidth:</span><span class="value">${element.clientWidth}px</span></div>`;
+                html += `<div class="property"><span class="label">scrollWidth:</span><span class="value ${element.scrollWidth > element.clientWidth ? 'warning' : ''}">${element.scrollWidth}px</span></div>`;
+
+                // Computed styles
+                html += `<div class="property"><span class="label">display:</span><span class="value">${computed.display}</span></div>`;
+                html += `<div class="property"><span class="label">position:</span><span class="value">${computed.position}</span></div>`;
+                html += `<div class="property"><span class="label">width (computed):</span><span class="value">${computed.width}</span></div>`;
+                html += `<div class="property"><span class="label">min-width:</span><span class="value">${computed.minWidth}</span></div>`;
+                html += `<div class="property"><span class="label">max-width:</span><span class="value">${computed.maxWidth}</span></div>`;
+
+                if (computed.display.includes('grid')) {
+                    html += `<div class="property"><span class="label">grid-template-columns:</span><span class="value">${computed.gridTemplateColumns}</span></div>`;
+                    html += `<div class="property"><span class="label">grid-column:</span><span class="value">${computed.gridColumn}</span></div>`;
+                }
+
+                if (computed.display.includes('flex')) {
+                    html += `<div class="property"><span class="label">flex:</span><span class="value">${computed.flex}</span></div>`;
+                    html += `<div class="property"><span class="label">flex-basis:</span><span class="value">${computed.flexBasis}</span></div>`;
+                }
+
+                html += `<div class="property"><span class="label">margin-left:</span><span class="value">${computed.marginLeft}</span></div>`;
+                html += `<div class="property"><span class="label">margin-right:</span><span class="value">${computed.marginRight}</span></div>`;
+                html += `<div class="property"><span class="label">padding-left:</span><span class="value">${computed.paddingLeft}</span></div>`;
+                html += `<div class="property"><span class="label">padding-right:</span><span class="value">${computed.paddingRight}</span></div>`;
+                html += `<div class="property"><span class="label">overflow-x:</span><span class="value">${computed.overflowX}</span></div>`;
+                html += `<div class="property"><span class="label">transform:</span><span class="value">${computed.transform}</span></div>`;
+
+                html += `</div>`;
+            });
+
+            // Summary
+            html += '<div class="section"><h3>Issues Found</h3>';
+            const issues = [];
+
+            selectors.forEach(selector => {
+                const el = doc.querySelector(selector);
+                if (!el) return;
+
+                const rect = el.getBoundingClientRect();
+                const computed = window.getComputedStyle(el);
+
+                if (rect.width < 100 && selector.includes('hero') || selector.includes('overview')) {
+                    issues.push(`${selector}: width is only ${rect.width.toFixed(2)}px (TOO NARROW)`);
+                }
+                if (rect.right > 375) {
+                    issues.push(`${selector}: extends beyond viewport (right: ${rect.right.toFixed(2)}px)`);
+                }
+                if (el.scrollWidth > el.clientWidth) {
+                    issues.push(`${selector}: horizontal overflow (scrollWidth: ${el.scrollWidth}px > clientWidth: ${el.clientWidth}px)`);
+                }
+                if (rect.x < 0) {
+                    issues.push(`${selector}: positioned left of viewport (x: ${rect.x.toFixed(2)}px)`);
+                }
+            });
+
+            if (issues.length > 0) {
+                issues.forEach(issue => {
+                    html += `<p class="warning">⚠ ${issue}</p>`;
+                });
+            } else {
+                html += '<p class="info">No obvious issues detected.</p>';
+            }
+
+            html += '</div>';
+
+            resultsContainer.innerHTML = html;
+        }
+    </script>
+</body>
+</html>

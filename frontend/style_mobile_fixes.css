@@ -1,0 +1,269 @@
+/* =====================================================
+   MOBILE RESPONSIVE FIXES - 375px-430px viewports
+===================================================== */
+
+/* Enhanced mobile breakpoint for small phones */
+@media (max-width: 480px) {
+
+    /* Fix main container overflow */
+    .main {
+        margin-left: 0;
+        padding: 0 10px 90px;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Sidebar hidden on mobile, full content width */
+    .sidebar {
+        position: fixed;
+        left: -280px;
+        z-index: 9999;
+    }
+
+    /* Topbar responsive */
+    .topbar {
+        padding: 0 8px;
+        height: 68px;
+    }
+
+    .header-right {
+        gap: 6px;
+    }
+
+    /* Hero card - prevent overflow */
+    .hero-card {
+        grid-column: 1 / -1;
+        grid-template-columns: 1fr;
+        padding: 14px;
+        gap: 14px;
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Overview header - allow wrapping */
+    .overview-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .overview-header h2 {
+        font-size: 14px;
+        letter-spacing: 0.03em;
+        word-break: break-word;
+        min-width: 0;
+    }
+
+    .system-status-badge {
+        align-self: flex-start;
+        font-size: 8px;
+        padding: 6px 12px;
+    }
+
+    /* Overview stats - single column */
+    .overview-stats {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .stat-card {
+        padding: 10px;
+        min-width: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .stat-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+    }
+
+    .stat-info h4 {
+        font-size: 11px;
+    }
+
+    .stat-info p {
+        font-size: 18px;
+    }
+
+    /* Quick actions section */
+    .quick-actions-section {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .action-card {
+        min-width: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Dashboard grid */
+    .dashboard-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .dashboard-grid > * {
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Title row */
+    .title-row {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .title-row .card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Greeting section */
+    .greeting {
+        font-size: 26px;
+        line-height: 1.3;
+        word-break: break-word;
+    }
+
+    /* Date/time card */
+    .card.date-time {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px 14px;
+        box-sizing: border-box;
+    }
+
+    /* Room/Scene grids */
+    .room-grid,
+    .scene-grid,
+    .device-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    /* Cards */
+    .card {
+        min-width: 0;
+        padding: 14px;
+    }
+
+    /* Floating music player - mobile responsive */
+    .floating-dock {
+        left: 10px;
+        right: 10px;
+        max-width: calc(100vw - 20px);
+        margin: 0;
+        bottom: 12px;
+        padding: 10px 12px;
+    }
+
+    .floating-dock.dock-minimized {
+        max-width: min(240px, calc(100vw - 20px));
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+
+    .floating-dock.dock-minimized .media-control button {
+        width: 34px;
+        height: 34px;
+    }
+
+    .floating-dock.dock-minimized .media-control button.play {
+        width: 38px;
+        height: 38px;
+    }
+
+    .floating-dock.dock-minimized .dock-expand-btn {
+        width: 34px;
+        height: 34px;
+        margin-left: 4px;
+    }
+
+    /* Media control card */
+    .media-control-card {
+        padding: 12px;
+    }
+
+    /* Modal responsive */
+    .modal-content {
+        width: calc(100vw - 20px);
+        max-width: 100%;
+        margin: 10px;
+        padding: 16px;
+    }
+}
+
+/* Extra small phones - 375px and below */
+@media (max-width: 375px) {
+
+    .main {
+        padding: 0 8px 80px;
+    }
+
+    .topbar {
+        padding: 0 6px;
+    }
+
+    .header-right {
+        gap: 4px;
+    }
+
+    .hero-card {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .overview-header h2 {
+        font-size: 13px;
+    }
+
+    .system-status-badge {
+        font-size: 7px;
+        padding: 5px 10px;
+    }
+
+    .stat-card {
+        padding: 8px;
+        gap: 8px;
+    }
+
+    .greeting {
+        font-size: 24px;
+    }
+
+    .floating-dock.dock-minimized {
+        max-width: min(220px, calc(100vw - 16px));
+    }
+
+    .floating-dock.dock-minimized .media-control {
+        gap: 4px;
+    }
+
+    .floating-dock.dock-minimized .media-control button {
+        width: 32px;
+        height: 32px;
+    }
+
+    .floating-dock.dock-minimized .media-control button.play {
+        width: 36px;
+        height: 36px;
+    }
+
+    .floating-dock.dock-minimized .media-control .material-symbols-outlined {
+        font-size: 18px;
+    }
+
+    .floating-dock.dock-minimized .media-control button.play .material-symbols-outlined {
+        font-size: 22px;
+    }
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Overflow Debug</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: monospace;
+            background: #1a1a1a;
+            color: #fff;
+            font-size: 12px;
+        }
+        .debug-section {
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #2a2a2a;
+            border: 1px solid #3a3a3a;
+            border-radius: 4px;
+        }
+        .overflow-item {
+            padding: 5px;
+            margin: 5px 0;
+            background: #ff4444;
+            border-left: 3px solid #ff0000;
+        }
+        .ok-item {
+            padding: 5px;
+            margin: 5px 0;
+            background: #44ff44;
+            color: #000;
+            border-left: 3px solid #00ff00;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px 5px;
+            background: #3dd9bd;
+            color: #000;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background: #4ee8ca;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mobile Overflow Debugger</h1>
+    <p>Viewport Width: <span id="viewport-width"></span>px</p>
+    <p>Document ScrollWidth: <span id="scroll-width"></span>px</p>
+    <p>Overflow: <span id="overflow-status"></span>px</p>
+
+    <button onclick="runDiagnostics()">Run Full Diagnostic</button>
+    <button onclick="highlightOverflowingElements()">Highlight Overflowing Elements</button>
+    <button onclick="window.location.href='index.html'">Back to Dashboard</button>
+
+    <div id="results"></div>
+
+    <script>
+        function runDiagnostics() {
+            const results = document.getElementById('results');
+            results.innerHTML = '';
+
+            // Basic measurements
+            const viewportWidth = window.innerWidth;
+            const scrollWidth = document.documentElement.scrollWidth;
+            const bodyScrollWidth = document.body.scrollWidth;
+            const overflow = scrollWidth - viewportWidth;
+
+            document.getElementById('viewport-width').textContent = viewportWidth;
+            document.getElementById('scroll-width').textContent = scrollWidth;
+            document.getElementById('overflow-status').textContent = overflow > 0 ? overflow + ' (OVERFLOW DETECTED)' : '0 (OK)';
+
+            // Add basic info section
+            const basicInfo = document.createElement('div');
+            basicInfo.className = 'debug-section';
+            basicInfo.innerHTML = `
+                <h3>Basic Measurements</h3>
+                <p>window.innerWidth: ${viewportWidth}px</p>
+                <p>document.documentElement.scrollWidth: ${scrollWidth}px</p>
+                <p>document.body.scrollWidth: ${bodyScrollWidth}px</p>
+                <p><strong>Horizontal Overflow: ${overflow}px</strong></p>
+            `;
+            results.appendChild(basicInfo);
+
+            // Check all major containers
+            const selectors = [
+                'html',
+                'body',
+                '.main',
+                '.topbar',
+                '.header-right',
+                '.dashboard-grid',
+                '.hero-card',
+                '.overview-header',
+                '.overview-stats',
+                '.stat-card',
+                '.title-row',
+                '.date-time',
+                '.card',
+                '.floating-dock',
+                '.sidebar',
+                '.breadcrumb',
+                '.system-status-badge'
+            ];
+
+            const overflowSection = document.createElement('div');
+            overflowSection.className = 'debug-section';
+            overflowSection.innerHTML = '<h3>Element Width Analysis</h3>';
+
+            selectors.forEach(selector => {
+                const elements = document.querySelectorAll(selector);
+                elements.forEach((el, index) => {
+                    const rect = el.getBoundingClientRect();
+                    const computedStyle = window.getComputedStyle(el);
+                    const isOverflowing = rect.right > viewportWidth || rect.left < 0;
+
+                    const item = document.createElement('div');
+                    item.className = isOverflowing ? 'overflow-item' : 'ok-item';
+                    item.innerHTML = `
+                        <strong>${selector}${elements.length > 1 ? ` [${index}]` : ''}</strong><br>
+                        Width: ${rect.width.toFixed(2)}px |
+                        Left: ${rect.left.toFixed(2)}px |
+                        Right: ${rect.right.toFixed(2)}px<br>
+                        Computed width: ${computedStyle.width} |
+                        Box-sizing: ${computedStyle.boxSizing}<br>
+                        Padding: ${computedStyle.paddingLeft} / ${computedStyle.paddingRight}<br>
+                        Margin: ${computedStyle.marginLeft} / ${computedStyle.marginRight}
+                        ${isOverflowing ? '<br><strong>⚠️ OVERFLOWING!</strong>' : ''}
+                    `;
+                    overflowSection.appendChild(item);
+                });
+            });
+
+            results.appendChild(overflowSection);
+        }
+
+        function highlightOverflowingElements() {
+            const viewportWidth = window.innerWidth;
+            const allElements = document.querySelectorAll('*');
+
+            allElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.right > viewportWidth || rect.left < 0) {
+                    el.style.outline = '3px solid red';
+                    el.style.outlineOffset = '-3px';
+                } else {
+                    el.style.outline = '';
+                }
+            });
+
+            alert('Overflowing elements highlighted in RED');
+        }
+
+        // Run diagnostics on load
+        window.addEventListener('load', runDiagnostics);
+        window.addEventListener('resize', runDiagnostics);
+    </script>
+</body>
+</html>

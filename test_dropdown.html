@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Dropdown Test</title>
+    <style>
+        .custom-dropdown { position: relative; width: 200px; }
+        .custom-dropdown-selected { padding: 10px; border: 1px solid #ccc; cursor: pointer; }
+        .custom-dropdown-menu { display: none; position: absolute; width: 100%; border: 1px solid #ccc; background: white; }
+        .custom-dropdown.open .custom-dropdown-menu { display: block; }
+        .custom-dropdown-option { padding: 10px; cursor: pointer; }
+        .custom-dropdown-option:hover { background: #f0f0f0; }
+    </style>
+</head>
+<body>
+    <h1>Custom Dropdown Test</h1>
+
+    <div class="custom-dropdown fp-role-dropdown" data-dropdown-id="fp-role-dropdown">
+        <div class="custom-dropdown-selected" onclick="toggleCustomDropdown('fp-role-dropdown')">
+            <span>USER</span>
+        </div>
+        <div class="custom-dropdown-menu">
+            <div class="custom-dropdown-option selected" data-value="USER" onclick="selectCustomDropdownOption('fp-role-dropdown', 'USER', 'USER')">
+                USER
+            </div>
+            <div class="custom-dropdown-option" data-value="ADMIN" onclick="selectCustomDropdownOption('fp-role-dropdown', 'ADMIN', 'ADMIN')">
+                ADMIN
+            </div>
+        </div>
+        <input type="hidden" id="enroll-role" value="USER">
+    </div>
+
+    <br><br>
+    <button onclick="testGetValue()">Test Get Value</button>
+    <div id="result"></div>
+
+    <script>
+        function toggleCustomDropdown(dropdownId) {
+            const dropdown = document.querySelector(`[data-dropdown-id="${dropdownId}"]`);
+            if (!dropdown) return;
+            dropdown.classList.toggle('open');
+        }
+
+        function selectCustomDropdownOption(dropdownId, value, label) {
+            const dropdown = document.querySelector(`[data-dropdown-id="${dropdownId}"]`);
+            if (!dropdown) return;
+
+            const selectedDiv = dropdown.querySelector('.custom-dropdown-selected span');
+            if (selectedDiv) selectedDiv.textContent = label;
+
+            const hiddenInput = dropdown.querySelector('input[type="hidden"]');
+            if (hiddenInput) hiddenInput.value = value;
+
+            dropdown.classList.remove('open');
+        }
+
+        function testGetValue() {
+            const role = document.getElementById('enroll-role').value;
+            document.getElementById('result').textContent = 'Role value: ' + role;
+            alert('Role value: ' + role);
+        }
+    </script>
+</body>
+</html>

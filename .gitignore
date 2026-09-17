@@ -1,0 +1,31 @@
+# Environment variables and secrets
+.env
+backend/.env
+
+# ESP32 local credentials
+esp32/smart_home/secrets.h
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+
+# Local runtime error/temp files
+backend/startup.err
+backend/temp_stderr.txt
+backend/temp_stdout.txt
+
+# Temporary files
+*.tmp
+*.bak
+*.backup
+*.exe
+server.js.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Backup directories
+backup_*/

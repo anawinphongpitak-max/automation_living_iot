@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AutoLiving IoT Dashboard</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><text y='20' font-size='20'>🏠</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= LOGIN SCREEN ================= -->
+<div id="login-screen" class="login-screen">
+    <div class="login-card">
+        <div class="login-header">
+            <span class="material-symbols-outlined login-icon">lock</span>
+            <h1>Welcome Back</h1>
+            <p>Sign in to access your Smart Home Dashboard</p>
+        </div>
+
+        <form id="login-form" class="login-form">
+            <div class="login-field">
+                <label for="login-username">Username or Email</label>
+                <input
+                    type="text"
+                    id="login-username"
+                    name="username"
+                    autocomplete="username"
+                    required
+                >
+            </div>
+
+            <div class="login-field">
+                <label for="login-password">Password</label>
+                <input
+                    type="password"
+                    id="login-password"
+                    name="password"
+                    autocomplete="current-password"
+                    required
+                >
+            </div>
+
+            <div id="login-error" class="login-error" style="display: none;"></div>
+
+            <button type="submit" id="login-submit" class="login-button">
+                <span id="login-button-text">Sign In</span>
+                <span id="login-button-loading" class="login-loading" style="display: none;">Signing in...</span>
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- ================= DASHBOARD ================= -->
+<div class="app" id="app-dashboard">
+
+    <!-- ================= MOBILE SIDEBAR BACKDROP ================= -->
+    <div class="mobile-sidebar-backdrop" id="mobileSidebarBackdrop"></div>
+
+    <!-- ================= LEFT SIDEBAR ================= -->
+    <aside class="sidebar" id="sidebar">
+
+        <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+
+        <div class="logo">
+            <span class="material-symbols-outlined">home</span>
+        </div>
+
+        <nav class="navigation">
+
+            <button class="nav-item active" data-page="dashboard">
+                <span class="material-symbols-outlined">dashboard</span>
+                <label>Dashboard</label>
+            </button>
+
+            <button class="nav-item" data-page="rooms">
+                <span class="material-symbols-outlined">meeting_room</span>
+                <label>Rooms</label>
+            </button>
+
+            <button class="nav-item" data-page="scenes">
+                <span class="material-symbols-outlined">theater_comedy</span>
+                <label>Scenes</label>
+            </button>
+
+            <button class="nav-item" data-page="fingerprint">
+                <span class="material-symbols-outlined">fingerprint</span>
+                <label>Fingerprint</label>
+            </button>
+
+            <button class="nav-item" data-page="history">
+                <span class="material-symbols-outlined">history</span>
+                <label>History</label>
+            </button>
+
+            <button class="nav-item" data-page="telegram">
+                <span class="material-symbols-outlined">send</span>
+                <label>Telegram</label>
+            </button>
+
+            <button class="nav-item" data-page="settings">
+                <span class="material-symbols-outlined">settings</span>
+                <label>Settings</label>
+            </button>
+
+            <button class="nav-item nav-admin-only" data-page="users" id="nav-users" style="display: none;">
+                <span class="material-symbols-outlined">manage_accounts</span>
+                <label>Users</label>
+            </button>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+        <!-- HEADER -->
+
+        <header class="topbar">
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+
+            <div class="breadcrumb">
+                <span>Home</span>
+                <b>/</b>
+                <strong id="breadcrumb-title">
+                    Dashboard
+                </strong>
+            </div>
+
+
+            <div class="header-right">
+
+                <div class="telemetry">
+                    <span class="material-symbols-outlined">device_thermostat</span> <span id="temperature">28.5°C</span>
+                </div>
+
+                <div class="telemetry">
+                    <span class="material-symbols-outlined">water_drop</span> <span id="humidity">65%</span>
+                </div>
+
+                <div class="esp-status">
+                    <i class="online-dot"></i>
+                    ESP32 ONLINE
+                </div>
+
+                <button class="mode-toggle" id="modeToggle" title="สลับ Manual / Automation">
+                    <span class="material-symbols-outlined">pan_tool</span>
+                    <span class="mode-label">MANUAL</span>
+                </button>
+
+                <button class="theme-toggle" id="themeToggle">
+                    <span class="material-symbols-outlined">dark_mode</span>
+                </button>
+
+                <button class="notification">
+                    <span class="material-symbols-outlined">notifications</span>
+                </button>
+
+                <button class="theme-toggle" id="logoutButton" title="Sign out">
+                    <span class="material-symbols-outlined">logout</span>
+                </button>
+
+                <div class="avatar">
+                    A
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE CONTENT -->
+
+        <section id="page-content"></section>
+
+    </main>
+
+
+    <!-- ================= MINIMIZED SPOTIFY PLAYER ================= -->
+
+    <div class="spotify-mini-player" id="spotify-mini-player" style="display: none;">
+        <div class="spotify-mini-album" id="mini-album">
+            <span class="material-symbols-outlined">album</span>
+        </div>
+        <div class="spotify-mini-info">
+            <strong id="mini-track-name">No Track</strong>
+            <small id="mini-track-artist">Not Playing</small>
+        </div>
+        <button class="spotify-mini-play-btn" id="mini-play-btn">
+            <span class="material-symbols-outlined">play_arrow</span>
+        </button>
+    </div>
+
+
+    <!-- ================= FLOATING DOCK ================= -->
+
+    <div class="floating-dock">
+
+        <div class="dock-album-container">
+            <div class="avatar large" id="dock-album-art">
+                A
+            </div>
+        </div>
+
+        <div class="dock-content">
+
+            <div class="dock-track-info-top">
+                <div class="dock-track-details">
+                    <strong id="dock-track-name">Admin</strong>
+                    <small id="dock-track-artist">
+                        <i class="online-dot"></i>
+                        Online
+                    </small>
+                </div>
+                <button class="dock-menu-btn" title="Minimize player" aria-label="Minimize music player">
+                    <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                </button>
+            </div>
+
+            <div class="dock-progress-section">
+                <span class="progress-time" id="progress-current">0:00</span>
+                <div class="mini-progress-container" id="mini-progress">
+                    <div class="mini-progress-bar">
+                        <div class="mini-progress-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+                <span class="progress-time" id="progress-duration">0:00</span>
+            </div>
+
+            <div class="media-control" id="mini-player">
+                <button onclick="spotifyPrevious()" title="Previous track" aria-label="Previous track">
+                    <span class="material-symbols-outlined">skip_previous</span>
+                </button>
+
+                <button class="play" onclick="spotifyPlayPause()" id="mini-play-btn" title="Play/Pause" aria-label="Play or pause">
+                    <span class="material-symbols-outlined">play_arrow</span>
+                </button>
+
+                <button onclick="spotifyNext()" title="Next track" aria-label="Next track">
+                    <span class="material-symbols-outlined">skip_next</span>
+                </button>
+
+                <button class="dock-airplay-btn" title="Cast" aria-label="Cast to device">
+                    <span class="material-symbols-outlined">cast</span>
+                </button>
+
+                <button class="dock-expand-btn" title="Expand player" aria-label="Expand music player" style="display: none;">
+                    <span class="material-symbols-outlined">keyboard_arrow_up</span>
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= MODAL ================= -->
+
+<div id="modal" class="modal hidden">
+
+    <div id="modal-content" class="modal-content"></div>
+
+</div>
+
+<!-- Logout Confirmation Modal -->
+<div id="logout-modal" class="modal hidden">
+    <div class="modal-content modal-small">
+        <h2>Confirm Logout</h2>
+        <p>Are you sure you want to log out?</p>
+        <div class="modal-actions">
+            <button class="btn-secondary" onclick="closeLogoutModal()">Cancel</button>
+            <button class="btn-danger" onclick="confirmLogout()">Logout</button>
+        </div>
+    </div>
+</div>
+
+<!-- User Management Modal -->
+<div id="user-modal" class="modal hidden">
+    <div class="modal-content">
+        <h2 id="user-modal-title">Add User</h2>
+        <form id="user-form" onsubmit="return false;">
+            <div class="form-field">
+                <label for="user-full-name">Full Name</label>
+                <input type="text" id="user-full-name" required>
+            </div>
+            <div class="form-field">
+                <label for="user-username">Username</label>
+                <input type="text" id="user-username" required minlength="3">
+            </div>
+            <div class="form-field">
+                <label for="user-email">Email</label>
+                <input type="email" id="user-email" required>
+            </div>
+            <div class="form-field" id="user-password-field">
+                <label for="user-password">Password</label>
+                <input type="password" id="user-password" minlength="8">
+                <small>Minimum 8 characters</small>
+            </div>
+            <div class="form-field">
+                <label for="user-role">Role</label>
+                <div class="custom-dropdown" data-dropdown-id="user-role-dropdown">
+                    <div class="custom-dropdown-selected" onclick="toggleCustomDropdown('user-role-dropdown')">
+                        <span>USER</span>
+                        <svg class="custom-dropdown-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                            <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="custom-dropdown-menu">
+                        <div class="custom-dropdown-option selected" data-value="USER" onclick="selectCustomDropdownOption('user-role-dropdown', 'USER', 'USER')">
+                            USER
+                        </div>
+                        <div class="custom-dropdown-option" data-value="ADMIN" onclick="selectCustomDropdownOption('user-role-dropdown', 'ADMIN', 'ADMIN')">
+                            ADMIN
+                        </div>
+                    </div>
+                    <input type="hidden" id="user-role" value="USER" required>
+                </div>
+            </div>
+            <div class="form-field" id="user-active-field" style="display: none;">
+                <label class="toggle-label-compact">
+                    <input type="checkbox" id="user-active" checked>
+                    <span>Account Active</span>
+                </label>
+            </div>
+            <div id="user-modal-error" class="modal-error" style="display: none;"></div>
+            <div class="modal-actions">
+                <button type="button" class="btn-secondary" onclick="closeUserModal()">Cancel</button>
+                <button type="button" class="btn-primary" id="user-submit-btn" onclick="submitUserForm()">Create User</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div id="toast"></div>
+
+
+<script src="debug-config.js"></script>
+<script src="mqtt-client.js"></script>
+<script src="script.js"></script>
+<script src="icon_functions.js"></script>
+
+</body>
+</html>
