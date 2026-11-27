@@ -1,0 +1,1217 @@
+require('dotenv').config();
+const express   = require('express');
+const http      = require('http');
+const WebSocket = require('ws');
+const mqtt      = require('mqtt');
+const path      = require('path');
+const db        = require('./db');
+
+const app    = express();
+const server = http.createServer(app);
+const wss    = new WebSocket.Server({ server });
+
+const START_TIME = Date.now();
+
+app.use(express.json());
+
+// CORS - frontend hardcode http://localhost:3000 ไว้ ถ้าเปิดหน้าผ่าน Live Server
+// (port 5500) จะเป็น cross-origin ใส่ header เองแทนการลง cors package
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  if (req.method === 'OPTIONS') return res.sendStatus(204);
+  next();
+});
+
+app.use(express.static(path.join(__dirname, '../frontend')));
+
+const mqttClient = mqtt.connect(process.env.MQTT_BROKER || 'mqtt://localhost:1883', {
+  username: process.env.MQTT_USERNAME,
+  password: process.env.MQTT_PASSWORD,
+  rejectUnauthorized: true
+});
+
+/* =====================================================
+   TELEGRAM BOT INITIALIZATION
+   Initializes only when BOTH credentials are present.
+   Gracefully degrades if missing - backend continues normally.
+===================================================== */
+let telegramBot = null;
+const TELEGRAM_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
+const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+
+if (TELEGRAM_TOKEN && TELEGRAM_CHAT_ID && TELEGRAM_TOKEN.trim() && TELEGRAM_CHAT_ID.trim()) {
+  try {
+    const TelegramBot = require('node-telegram-bot-api');
+    telegramBot = new TelegramBot(TELEGRAM_TOKEN, { polling: false });
+    console.log('[TELEGRAM] Bot initialized - Security alerts enabled');
+  } catch (err) {
+    console.error('[TELEGRAM] Failed to initialize bot:', err.message);
+  }
+} else {
+  console.warn('[TELEGRAM] Bot not configured - Security alerts disabled (set TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID in .env)');
+}
+
+let state = {
+  sensor: {
+    temp: null,
+    hum: null,
+    lastUpdate: null
+  },
+  door: {
+    locked: true  // true = locked (relay HIGH), false = unlocked (relay LOW)
+  },
+  living: {
+    led: false,
+    exhaustFan: false,
+    ac: 0,  // 0=off, 70, 90, 100
+    pir: 0
+  },
+  kitchen: {
+    led: false,
+    exhaustFan: false,
+    window: 0,      // 0-180 degrees
+    curtain: 'stop',
+    pir: 0
+  },
+  bedroom: {
+    led: false,
+    fan: false,
+    ac: 0,  // 0=off, 70, 90, 100
+    window: 0,      // 0-180 degrees
+    curtain: 'stop',
+    pir: 0
+  },
+  fingerprint: {
+    lastId: null,
+    lastEvent: null
+  },
+  scene: 'home',
+  autoMode: false,
+  autoSettings: {
+    lightFanTimeout: null,  // วินาที - ค่าจริงจาก ESP32 (home/status/auto/settings) เท่านั้น ไม่ใช่ค่าที่ submit
+    acTimeout: null
+  },
+  mqttOnline: false,
+  telegramOnline: false,   // true when Telegram bot initialized (set after init below)
+  lastUpdate: null,
+  pir: {
+    living: false,
+    kitchen: false,
+    bedroom: false
+  }
+};
+
+// Set Telegram status based on initialization result
+if (telegramBot) {
+  state.telegramOnline = true;
+}
+
+/* =====================================================
+   ROOM CAPABILITIES
+   อ้างจาก GPIO mapping ใน README.md - living ไม่มี window/curtain,
+   kitchen ไม่มี AC ใช้ตรวจก่อน publish เพื่อไม่ยิง MQTT มั่ว
+===================================================== */
+
+const ROOMS = ['living', 'kitchen', 'bedroom'];
+
+const CAPABILITIES = {
+  living:  { led: true, fan: true,  ac: true,  window: false, curtain: false },
+  kitchen: { led: true, fan: true,  ac: false, window: true,  curtain: true  },
+  bedroom: { led: true, fan: true,  ac: true,  window: true,  curtain: true  }
+};
+
+// ห้อง living/kitchen ใช้ field ชื่อ exhaustFan, bedroom ใช้ fan
+const fanField = room => (room === 'bedroom' ? 'fan' : 'exhaustFan');
+
+// frontend ส่ง level 0-3 แต่ ESP32 รับเป็น duty cycle 0/70/90/100
+const AC_LEVELS = [0, 70, 90, 100];
+const acLevelToEsp32 = level => AC_LEVELS[level] ?? 0;
+const acLevelFromEsp32 = value => {
+  const index = AC_LEVELS.indexOf(value);
+  return index === -1 ? 0 : index;
+};
+
+/* =====================================================
+   EVENT LOG (in-memory ring)
+===================================================== */
+
+const MAX_LOGS = 100;
+let logs = [];
+
+// timer เดียวสำหรับ WAKE-UP mode - ต้องประกาศไว้บนสุดเพราะทั้ง
+// cancelWakeupIfUserCommand() (route ผู้ใช้) และ runSceneInternal() (scene
+// engine) อ้างถึงตัวแปรเดียวกันนี้
+let wakeupTimer = null;
+
+/* =====================================================
+   TELEGRAM SECURITY ALERT HELPERS
+===================================================== */
+
+// Global cooldown timestamp for Telegram alerts (5 seconds for testing)
+let lastTelegramAlertTime = 0;
+const TELEGRAM_COOLDOWN_MS = 5000; // 5 seconds
+
+/**
+ * Check if Telegram alert should be sent based on current scene mode
+ * Only sends alerts during Away Mode or Sleep Mode
+ */
+function shouldSendTelegramAlert() {
+  return state.scene === 'exit' || state.scene === 'sleep';
+}
+
+/**
+ * Send Telegram security alert (non-blocking, graceful failure)
+ * @param {string} room - Room where motion was detected
+ */
+async function sendTelegramAlert(room) {
+  if (!telegramBot || !TELEGRAM_CHAT_ID) return;
+
+  // Check cooldown - prevent spam alerts within 5 seconds
+  const now = Date.now();
+  if (now - lastTelegramAlertTime < TELEGRAM_COOLDOWN_MS) {
+    console.log(`[TELEGRAM] Alert blocked (cooldown active): ${room}`);
+    return;
+  }
+
+  try {
+    const modeNames = {
+      'exit': 'Away Mode',
+      'sleep': 'Sleep Mode'
+    };
+
+    const roomInfo = {
+      'living': { emoji: '🛋️', name: 'LIVING ROOM' },
+      'kitchen': { emoji: '🍳', name: 'KITCHEN' },
+      'bedroom': { emoji: '🛏️', name: 'BEDROOM' }
+    };
+
+    const modeName = modeNames[state.scene] || state.scene;
+    const roomData = roomInfo[room] || { emoji: '🏠', name: room.toUpperCase() };
+
+    const timestamp = new Date().toLocaleString('en-GB', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    }).replace(',', ' •');
+
+    const message = `🚨 SECURITY ALERT
+
+${roomData.emoji} ${roomData.name}
+━━━━━━━━━━━━━━
+
+⚠️ Motion Detected!
+
+🏠 Mode: ${modeName}
+🕒 Time: ${timestamp}
+
+━━━━━━━━━━━━━━
+🔒 Automation Living`;
+
+    await telegramBot.sendMessage(TELEGRAM_CHAT_ID, message);
+
+    // Update cooldown timestamp ONLY after successful send
+    lastTelegramAlertTime = now;
+
+    console.log(`[TELEGRAM] Alert sent: Motion in ${room} during ${modeName}`);
+  } catch (err) {
+    console.error('[TELEGRAM] Failed to send alert:', err.message);
+    // Graceful degradation - don't throw, system continues normally
+  }
+}
+
+function addLog(type, message, extra = {}) {
+  const event = {
+    timestamp: new Date().toISOString(),
+    type,
+    message,
+    ...extra
+  };
+
+  // Existing: in-memory ring buffer
+  logs.unshift(event);
+  if (logs.length > MAX_LOGS) logs.length = MAX_LOGS;
+
+  // NEW: MySQL persistence (non-blocking, graceful failure)
+  if (db.isConnected()) {
+    const normalized = db.normalizeEvent(event);
+    db.insertEvent(normalized).catch(err => {
+      console.error('[MySQL] Insert failed:', err.message);
+      // Don't throw - log error and continue
+    });
+  }
+}
+
+/* =====================================================
+   STATE PROJECTION
+   state ภายในเก็บแบบ nested by room (state.living.led) แต่ frontend
+   (updateDeviceStatesFromMQTT ใน script.js) อ่านแบบ grouped by device
+   ฟังก์ชันนี้แปลงตอนส่งออกเท่านั้น ไม่แตะ state จริง
+===================================================== */
+
+const ESP32_TIMEOUT_MS = 30000;  // firmware publish sensor ทุก 2 วินาที
+
+function isEsp32Online() {
+  if (!state.sensor.lastUpdate) return false;
+  return Date.now() - new Date(state.sensor.lastUpdate).getTime() < ESP32_TIMEOUT_MS;
+}
+
+function projectState() {
+  const online = isEsp32Online();
+
+  const projected = {
+    door: state.door.locked ? 'locked' : 'unlocked',
+
+    led: {
+      living:  state.living.led,
+      kitchen: state.kitchen.led,
+      bedroom: state.bedroom.led
+    },
+
+    fan: {
+      living:  state.living.exhaustFan,
+      kitchen: state.kitchen.exhaustFan,
+      bedroom: state.bedroom.fan
+    },
+
+    ac: {
+      living:  { level: acLevelFromEsp32(state.living.ac) },
+      bedroom: { level: acLevelFromEsp32(state.bedroom.ac) }
+    },
+
+    // frontend อ่าน state.servo.window / .curtain เป็นค่าเดียวแล้วเอาไปใส่ทุกห้อง
+    // (ข้อจำกัดของ script.js:4717-4722) ค่าต่อห้องที่ถูกต้องจะตามมาทาง
+    // mqtt_message ที่ replay ตอนต่อ WS - ดู sendInitialState()
+    servo: {
+      window:  state.kitchen.window > 90 ? 'open' : 'closed',
+      curtain: state.kitchen.curtain === 'open' ? 'open' : 'closed'
+    },
+
+    scene: state.scene,
+
+    pir: {
+      living:  state.pir.living,
+      kitchen: state.pir.kitchen,
+      bedroom: state.pir.bedroom
+    },
+
+    sensors: {
+      pir: {
+        living:  !!state.living.pir,
+        kitchen: !!state.kitchen.pir,
+        bedroom: !!state.bedroom.pir
+      }
+    },
+
+    system: {
+      status: online ? 'online' : 'offline',
+      mqtt: state.mqttOnline,
+      telegram: state.telegramOnline,
+      autoMode: state.autoMode,
+      autoSettings: {
+        lightFanTimeout: state.autoSettings.lightFanTimeout,
+        acTimeout: state.autoSettings.acTimeout
+      }
+    }
+  };
+
+  // ใส่ dht22 เฉพาะเมื่อมีค่าจริงแล้ว - script.js:4446 ส่งค่าเข้า
+  // updateSensorData() ซึ่งเรียก temperature.toFixed(1) ทันที ถ้าส่ง null
+  // ไปจะ throw แล้วทำให้ initial_state handler ตายก่อนถึง updateSystemStatus()
+  if (typeof state.sensor.temp === 'number' && typeof state.sensor.hum === 'number') {
+    projected.sensors.dht22 = {
+      temperature: state.sensor.temp,
+      humidity: state.sensor.hum,
+      lastUpdate: state.sensor.lastUpdate,
+      // field เปล่าสำหรับ fetchSensorData() ใน script.js:3147 ที่ประกาศ
+      // const sensorData ทับ global แล้ว push ลง array - ถ้าไม่มีจะ throw
+      temperatureHistory: [],
+      humidityHistory: [],
+      maxHistorySize: 20,
+      chartData: { labels: [], temperatureValues: [], humidityValues: [] }
+    };
+  }
+
+  return projected;
+}
+
+/* =====================================================
+   MQTT
+===================================================== */
+
+const SUBSCRIBE_TOPICS = [
+  'home/sensor/dht22',
+  'home/sensor/pir/living',
+  'home/sensor/pir/kitchen',
+  'home/sensor/pir/bedroom',
+  'home/sensor/fingerprint',
+  'home/status/door',
+  'home/status/living',
+  'home/status/kitchen',
+  'home/status/bedroom',
+  'home/status/mode',
+  'home/status/auto/settings',
+  'home/status/pir',
+  'home/debug/log'
+];
+
+// เก็บ payload ล่าสุดของแต่ละ topic ไว้ replay ให้ client ที่เพิ่งต่อเข้ามา
+const lastPayloads = {};
+
+mqttClient.on('connect', () => {
+  console.log('[MQTT] Connected');
+  state.mqttOnline = true;
+  addLog('system', 'MQTT connected');
+
+  SUBSCRIBE_TOPICS.forEach(topic => mqttClient.subscribe(topic));
+
+  broadcast({ type: 'mqtt_status', connected: true });
+});
+
+mqttClient.on('error', e => {
+  console.error('[MQTT]', e.message);
+  state.mqttOnline = false;
+});
+
+mqttClient.on('offline', () => {
+  state.mqttOnline = false;
+  addLog('system', 'MQTT offline');
+  broadcast({ type: 'mqtt_status', connected: false });
+});
+
+mqttClient.on('message', (topic, raw) => {
+  let data; try { data = JSON.parse(raw.toString()); } catch { return; }
+
+  // ESP32 Automatic Mode debug telemetry - แยกออกจาก state จริงทั้งหมด
+  // ไม่เก็บใน state/lastPayloads ไม่ผ่าน addLog/broadcast mqtt_message เดิม
+  // ส่งต่อเป็น message type ใหม่ (debug_log) เท่านั้น ไม่กระทบ behavior เดิม
+  if (topic === 'home/debug/log') {
+    console.log('[ESP32 DEBUG]', data.message);
+    broadcast({
+      type: 'debug_log',
+      data: {
+        message: data.message,
+        timestamp: data.timestamp
+      }
+    });
+    return;
+  }
+
+  state.lastUpdate = new Date().toISOString();
+  lastPayloads[topic] = data;
+
+  // Sensors
+  if (topic === 'home/sensor/dht22') {
+    state.sensor.temp = data.temp;
+    state.sensor.hum = data.hum;
+    state.sensor.lastUpdate = state.lastUpdate;
+  }
+  else if (topic === 'home/sensor/pir/living') {
+    state.living.pir = data.pir || 0;
+    state.pir.living = !!data.pir;
+    if (data.pir) {
+      addLog('sensor', 'Motion detected in living room', { room: 'living' });
+      if (shouldSendTelegramAlert()) {
+        sendTelegramAlert('living');
+      }
+    }
+  }
+  else if (topic === 'home/sensor/pir/kitchen') {
+    state.kitchen.pir = data.pir || 0;
+    state.pir.kitchen = !!data.pir;
+    if (data.pir) {
+      addLog('sensor', 'Motion detected in kitchen', { room: 'kitchen' });
+      if (shouldSendTelegramAlert()) {
+        sendTelegramAlert('kitchen');
+      }
+    }
+  }
+  else if (topic === 'home/sensor/pir/bedroom') {
+    state.bedroom.pir = data.pir || 0;
+    state.pir.bedroom = !!data.pir;
+    if (data.pir) {
+      addLog('sensor', 'Motion detected in bedroom', { room: 'bedroom' });
+      if (shouldSendTelegramAlert()) {
+        sendTelegramAlert('bedroom');
+      }
+    }
+  }
+  else if (topic === 'home/sensor/fingerprint') {
+    state.fingerprint.lastId = data.id;
+    state.fingerprint.lastEvent = data.event;
+    addLog('security', `Fingerprint ${data.event}`, { id: data.id });
+  }
+
+  // Status updates from ESP32
+  else if (topic === 'home/status/door') {
+    if (data.locked !== undefined) state.door.locked = !!data.locked;
+  }
+  else if (topic === 'home/status/living') {
+    if (data.led !== undefined) state.living.led = !!data.led;
+    if (data.exhaustFan !== undefined) state.living.exhaustFan = !!data.exhaustFan;
+    if (data.ac !== undefined) state.living.ac = data.ac;
+  }
+  else if (topic === 'home/status/kitchen') {
+    if (data.led !== undefined) state.kitchen.led = !!data.led;
+    if (data.exhaustFan !== undefined) state.kitchen.exhaustFan = !!data.exhaustFan;
+    if (data.window !== undefined) state.kitchen.window = data.window;
+    if (data.curtain !== undefined) state.kitchen.curtain = data.curtain;
+  }
+  else if (topic === 'home/status/bedroom') {
+    if (data.led !== undefined) state.bedroom.led = !!data.led;
+    if (data.fan !== undefined) state.bedroom.fan = !!data.fan;
+    if (data.ac !== undefined) state.bedroom.ac = data.ac;
+    if (data.window !== undefined) state.bedroom.window = data.window;
+    if (data.curtain !== undefined) state.bedroom.curtain = data.curtain;
+  }
+  // โหมดจริงจากบอร์ด - ถือเป็น source of truth แทนค่าที่ backend เดาไว้
+  // (ผู้ใช้อาจสลับจากอีกแท็บ หรือบอร์ดรีสตาร์ทกลับเป็น manual)
+  else if (topic === 'home/status/mode') {
+    if (data.mode !== undefined) state.autoMode = data.mode === 'on';
+  }
+  // ค่า timeout จริงบนบอร์ด - ESP32 คือ source of truth เสมอ
+  // backend ไม่ตั้งค่านี้เองจาก POST /api/auto/settings ต้องรอ echo นี้เท่านั้น
+  else if (topic === 'home/status/auto/settings') {
+    if (data.lightFanTimeout !== undefined) state.autoSettings.lightFanTimeout = data.lightFanTimeout;
+    if (data.acTimeout !== undefined) state.autoSettings.acTimeout = data.acTimeout;
+  }
+  // สถานะ PIR จริงแบบ real-time จากบอร์ด (แยกจาก home/sensor/pir/* เดิม
+  // ที่ใช้ทำ log motion เท่านั้น) - เก็บใน state.pir ใหม่โดยเฉพาะ
+  else if (topic === 'home/status/pir') {
+    if (data.living !== undefined) state.pir.living = !!data.living;
+    if (data.kitchen !== undefined) state.pir.kitchen = !!data.kitchen;
+    if (data.bedroom !== undefined) state.pir.bedroom = !!data.bedroom;
+  }
+
+  // ส่ง topic จริงต่อให้ frontend - script.js:4465 มี handler แยกตาม topic
+  // ครบแล้ว ไม่ต้องแปลงเป็น message type เฉพาะทาง
+  broadcast({
+    type: 'mqtt_message',
+    topic,
+    payload: enrichPayload(topic, data),
+    timestamp: state.lastUpdate
+  });
+});
+
+/**
+ * เติม field ที่ frontend ต้องการแต่ firmware ไม่ส่ง
+ *
+ * script.js:4507 เช็ค `payload.exhaustFan !== undefined` ก่อนอัปเดตพัดลม
+ * ทุกห้อง แต่ firmware ส่ง field ชื่อ `fan` สำหรับห้องนอน (smart_home.ino:273)
+ * ทำให้พัดลมห้องนอนไม่เคยอัปเดต - มิเรอร์ค่าไปเป็น exhaustFan ให้ตรงกับที่
+ * frontend รอ (บรรทัด 4510 อ่าน payload.fan ต่อเองอยู่แล้ว)
+ */
+function enrichPayload(topic, data) {
+  if (topic === 'home/status/bedroom' && data.fan !== undefined && data.exhaustFan === undefined) {
+    return { ...data, exhaustFan: data.fan };
+  }
+  return data;
+}
+
+/**
+ * publish พร้อมเช็ค connection - คืน error message ถ้าส่งไม่ได้
+ */
+function publish(topic, payload) {
+  if (!mqttClient.connected) return 'MQTT not connected';
+  mqttClient.publish(topic, JSON.stringify(payload));
+  console.log('[MQTT] ->', topic, JSON.stringify(payload));
+  return null;
+}
+
+/* =====================================================
+   WEBSOCKET
+===================================================== */
+
+function sendInitialState(ws) {
+  ws.send(JSON.stringify({
+    type: 'initial_state',
+    state: projectState(),
+    logs
+  }));
+
+  // replay payload ล่าสุดของแต่ละ topic เป็น mqtt_message เพื่อให้ handler
+  // per-room ใน script.js ตั้งค่าแต่ละห้องได้ถูกต้อง (projectState ยุบ
+  // servo เป็นค่าเดียวทุกห้องตามที่ frontend อ่าน)
+  Object.keys(lastPayloads).forEach(topic => {
+    ws.send(JSON.stringify({
+      type: 'mqtt_message',
+      topic,
+      payload: enrichPayload(topic, lastPayloads[topic]),
+      timestamp: state.lastUpdate
+    }));
+  });
+}
+
+wss.on('connection', ws => {
+  console.log('[WS] +1 client, total:', wss.clients.size);
+  sendInitialState(ws);
+
+  ws.on('message', raw => {
+    let msg; try { msg = JSON.parse(raw); } catch { return; }
+
+    // Door control
+    if (msg.type === 'door') {
+      publish('home/control/door', { locked: msg.locked });
+    }
+    // Living room controls
+    else if (msg.type === 'living_led') {
+      publish('home/control/living/led', { state: msg.state });
+    }
+    else if (msg.type === 'living_fan') {
+      publish('home/control/living/fan', { state: msg.state });
+    }
+    else if (msg.type === 'living_ac') {
+      publish('home/control/living/ac', { level: msg.level });
+    }
+    // Kitchen controls
+    else if (msg.type === 'kitchen_led') {
+      publish('home/control/kitchen/led', { state: msg.state });
+    }
+    else if (msg.type === 'kitchen_fan') {
+      publish('home/control/kitchen/fan', { state: msg.state });
+    }
+    else if (msg.type === 'kitchen_window') {
+      publish('home/control/kitchen/window', { angle: msg.angle });
+    }
+    else if (msg.type === 'kitchen_curtain') {
+      publish('home/control/kitchen/curtain', { action: msg.action });
+    }
+    // Bedroom controls
+    else if (msg.type === 'bedroom_led') {
+      publish('home/control/bedroom/led', { state: msg.state });
+    }
+    else if (msg.type === 'bedroom_fan') {
+      publish('home/control/bedroom/fan', { state: msg.state });
+    }
+    else if (msg.type === 'bedroom_ac') {
+      publish('home/control/bedroom/ac', { level: msg.level });
+    }
+    else if (msg.type === 'bedroom_window') {
+      publish('home/control/bedroom/window', { angle: msg.angle });
+    }
+    else if (msg.type === 'bedroom_curtain') {
+      publish('home/control/bedroom/curtain', { action: msg.action });
+    }
+  });
+
+  ws.on('close', () => console.log('[WS] -1 client, total:', wss.clients.size));
+});
+
+function broadcast(data) {
+  const m = JSON.stringify(data);
+  wss.clients.forEach(c => { if (c.readyState === WebSocket.OPEN) c.send(m); });
+}
+
+/* =====================================================
+   REST API
+===================================================== */
+
+const ok   = res => res.json({ success: true });
+const fail = (res, code, error) => res.status(code).json({ success: false, error });
+
+/**
+ * ตรวจว่าห้องมีอยู่และรองรับอุปกรณ์นั้น - คืนข้อความ error ถ้าไม่ผ่าน
+ */
+function checkRoom(room, device) {
+  if (!ROOMS.includes(room)) return `Unknown room: ${room}`;
+  if (!CAPABILITIES[room][device]) return `Room ${room} has no ${device}`;
+  return null;
+}
+
+/**
+ * publish แล้วตอบ - รวม error handling ที่ทุก route ใช้เหมือนกัน
+ */
+function sendCommand(res, topic, payload, logMessage) {
+  const error = publish(topic, payload);
+  if (error) return fail(res, 503, error);
+  addLog('device_control', logMessage, { source: 'web' });
+  return ok(res);
+}
+
+// ---------- Read ----------
+
+app.get('/api/state', (req, res) => res.json({ success: true, state: projectState() }));
+
+app.get('/api/logs', (req, res) => {
+  const limit = Math.min(parseInt(req.query.limit, 10) || 50, MAX_LOGS);
+  res.json({ success: true, logs: logs.slice(0, limit) });
+});
+
+app.get('/api/sensors/latest', (req, res) => {
+  res.json({ success: true, sensors: projectState().sensors });
+});
+
+app.get('/api/system/status', (req, res) => {
+  const online = isEsp32Online();
+  res.json({
+    success: true,
+    mqtt: { connected: state.mqttOnline, broker: process.env.MQTT_BROKER },
+    esp32: { status: online ? 'online' : 'offline', lastSeen: state.sensor.lastUpdate },
+    mysql: { connected: db.isConnected() },
+    telegram: { connected: state.telegramOnline },
+    uptime: Math.floor((Date.now() - START_TIME) / 1000),
+    timestamp: new Date().toISOString()
+  });
+});
+
+app.get('/api/health', (req, res) => {
+  res.json({
+    success: true,
+    status: state.mqttOnline ? 'ok' : 'degraded',
+    mqtt: { connected: state.mqttOnline },
+    uptime: Math.floor((Date.now() - START_TIME) / 1000),
+    timestamp: new Date().toISOString()
+  });
+});
+
+// ---------- Device control ----------
+
+// คำสั่งจาก user จริงระหว่าง WAKE-UP mode ต้องยกเลิก wake-up timer และกลับไป
+// MANUAL - ต่างจาก scene engine ที่เรียก publish() ตรงๆ ไม่ผ่าน route พวกนี้
+// เลย จึงไม่ trigger การยกเลิกนี้โดยไม่ตั้งใจ (ดู runSceneInternal ด้านล่าง)
+function cancelWakeupIfUserCommand() {
+  if (state.scene === 'wake') {
+    clearTimeout(wakeupTimer);
+    wakeupTimer = null;
+    state.scene = 'manual';
+    broadcast({ type: 'scene_changed', scene: state.scene });
+  }
+}
+
+app.post('/api/led/:room/:state', (req, res) => {
+  const { room, state: value } = req.params;
+
+  const error = checkRoom(room, 'led');
+  if (error) return fail(res, 400, error);
+  if (value !== 'on' && value !== 'off') return fail(res, 400, `Invalid state: ${value}`);
+
+  cancelWakeupIfUserCommand();
+  sendCommand(res, `home/control/${room}/led`, { state: value === 'on' },
+    `${room} LED ${value.toUpperCase()}`);
+});
+
+app.post('/api/fan/:room/:state', (req, res) => {
+  const { room, state: value } = req.params;
+
+  const error = checkRoom(room, 'fan');
+  if (error) return fail(res, 400, error);
+  if (value !== 'on' && value !== 'off') return fail(res, 400, `Invalid state: ${value}`);
+
+  cancelWakeupIfUserCommand();
+  sendCommand(res, `home/control/${room}/fan`, { state: value === 'on' },
+    `${room} fan ${value.toUpperCase()}`);
+});
+
+app.post('/api/ac/:room/:level', (req, res) => {
+  const { room } = req.params;
+  const level = Number(req.params.level);
+
+  const error = checkRoom(room, 'ac');
+  if (error) return fail(res, 400, error);
+  if (!Number.isInteger(level) || level < 0 || level > 3) {
+    return fail(res, 400, `Invalid level: ${req.params.level} (expected 0-3)`);
+  }
+
+  cancelWakeupIfUserCommand();
+  sendCommand(res, `home/control/${room}/ac`, { level: acLevelToEsp32(level) },
+    `${room} AC level ${level}`);
+});
+
+app.post('/api/servo/:device/:action', (req, res) => {
+  // frontend ส่ง device เป็น {type}_{room} เช่น window_kitchen (script.js:2717)
+  const [type, room] = req.params.device.split('_');
+
+  // ปุ่ม CLOSE ใน script.js:1784 ส่ง "closed" ไม่ใช่ "close" - รับทั้งสองแบบ
+  const action = req.params.action === 'closed' ? 'close' : req.params.action;
+
+  if (type !== 'window' && type !== 'curtain') {
+    return fail(res, 400, `Invalid servo type: ${type} (expected window or curtain)`);
+  }
+  if (action !== 'open' && action !== 'close' && action !== 'stop') {
+    return fail(res, 400, `Invalid action: ${req.params.action}`);
+  }
+
+  const error = checkRoom(room, type);
+  if (error) return fail(res, 400, error);
+
+  // window เป็น servo 180 องศาสั่งด้วย angle, curtain เป็น 360 องศาสั่งด้วย action
+  const payload = type === 'window'
+    ? { angle: action === 'open' ? 180 : 0 }
+    : { action };
+
+  cancelWakeupIfUserCommand();
+  sendCommand(res, `home/control/${room}/${type}`, payload,
+    `${room} ${type} ${action.toUpperCase()}`);
+});
+
+app.post('/api/door/:command', (req, res) => {
+  const { command } = req.params;
+  if (command !== 'lock' && command !== 'unlock') {
+    return fail(res, 400, `Invalid command: ${command} (expected lock or unlock)`);
+  }
+
+  sendCommand(res, 'home/control/door', { locked: command === 'lock' },
+    `Door ${command.toUpperCase()}`);
+});
+
+// ---------- Scene / automation ----------
+// scene engine เรียก publish() ตรงๆ (ไม่ผ่าน /api/led, /api/fan, ... ) จึงไม่
+// trigger cancelWakeupIfUserCommand() โดยไม่ตั้งใจ - เป็นตัวแยก "user สั่งเอง"
+// ออกจาก "scene สั่งเอง" ตามที่ต้องการ
+
+// frontend ส่งชื่อ scene ตัวใหญ่ (script.js:3371-3377) แต่ตัว scene card
+// ในหน้าเว็บใช้ id คนละชื่อ - เก็บ id ฝั่ง frontend ไว้ใน state เพื่อให้
+// activeScene ที่อ่านจาก initial_state ไป highlight การ์ดได้ถูกใบ
+const SCENES = {
+  home:      'home',
+  away:      'exit',
+  sleep:     'sleep',
+  wakeup:    'wake',
+  manual:    'manual',
+  automatic: 'automatic'
+};
+
+function runSceneInternal(mode) {
+  if (mode === 'home') {
+    publish('home/control/living/led', { state: true });
+    publish('home/control/kitchen/led', { state: true });
+    publish('home/control/living/fan', { state: true });
+    setAutoMode(true);
+  }
+  else if (mode === 'exit') {
+    publish('home/control/living/led', { state: false });
+    publish('home/control/kitchen/led', { state: false });
+    publish('home/control/bedroom/led', { state: false });
+    publish('home/control/kitchen/window', { angle: 0 });
+    publish('home/control/bedroom/window', { angle: 0 });
+    publish('home/control/living/fan', { state: false });
+    publish('home/control/kitchen/fan', { state: false });
+    publish('home/control/bedroom/fan', { state: false });
+    publish('home/control/bedroom/ac', { level: acLevelToEsp32(0) });
+    publish('home/control/living/ac', { level: acLevelToEsp32(0) });
+    setAutoMode(false);
+  }
+  else if (mode === 'sleep') {
+    publish('home/control/living/led', { state: false });
+    publish('home/control/kitchen/led', { state: false });
+    publish('home/control/bedroom/led', { state: false });
+    publish('home/control/kitchen/window', { angle: 0 });
+    publish('home/control/bedroom/window', { angle: 0 });
+    publish('home/control/bedroom/ac', { level: acLevelToEsp32(1) }); // existing SLEEP level
+    publish('home/control/living/fan', { state: false });
+    publish('home/control/kitchen/fan', { state: false });
+    setAutoMode(false);
+  }
+  else if (mode === 'wake') {
+    publish('home/control/bedroom/window', { angle: 180 });
+    publish('home/control/bedroom/ac', { level: acLevelToEsp32(0) });
+    publish('home/control/bedroom/fan', { state: true });
+    publish('home/control/bedroom/led', { state: true });
+
+    clearTimeout(wakeupTimer);
+    wakeupTimer = setTimeout(() => {
+      if (state.scene !== 'wake') return; // ถูกยกเลิกไปแล้วโดยคำสั่ง user จริง - ห้ามปิดหน้าต่างอัตโนมัติ
+      wakeupTimer = null;
+      publish('home/control/bedroom/window', { angle: 0 }); // ปิดหน้าต่างก่อนเข้า HOME MODE
+      publish('home/control/bedroom/led', { state: false }); // ปิดไฟก่อนเข้า HOME MODE
+      publish('home/control/bedroom/fan', { state: false }); // ปิดพัดลมก่อนเข้า HOME MODE
+      state.scene = 'home';
+      runSceneInternal('home');
+      broadcast({ type: 'scene_changed', scene: state.scene });
+    }, 30000);
+  }
+  else if (mode === 'manual') {
+    setAutoMode(false);
+  }
+  else if (mode === 'automatic') {
+    setAutoMode(true);
+  }
+}
+
+app.post('/api/scene/:scene', (req, res) => {
+  const scene = req.params.scene.toLowerCase();
+  if (!SCENES[scene]) {
+    return fail(res, 400, `Unknown scene: ${req.params.scene}`);
+  }
+
+  // เปลี่ยน scene ใหม่ (ไม่ใช่ wake-up timer เดิม auto-activate HOME) ต้องเคลียร์
+  // wake-up timer เก่าเสมอ กัน timer เก่ายิงซ้อนถ้า user สั่ง scene อื่นระหว่างรอ
+  if (scene !== 'wakeup') {
+    clearTimeout(wakeupTimer);
+    wakeupTimer = null;
+  }
+
+  state.scene = SCENES[scene];
+  runSceneInternal(state.scene);
+  addLog('device_control', `Scene ${scene.toUpperCase()} activated`, { source: 'web' });
+  broadcast({ type: 'scene_changed', scene: state.scene });
+  return ok(res);
+});
+
+/*
+ * ตั้งค่า timeout ของ Automatic Mode - ESP32 เป็น source of truth เสมอ
+ * ห้ามตั้ง state.autoSettings ที่นี่เพราะยังไม่ยืนยันว่าบอร์ดรับค่าจริง
+ * ต้องรอ echo จาก home/status/auto/settings (ดู mqttClient.on('message'))
+ * ก่อนอัปเดต state - Dashboard จะได้ค่าที่ยืนยันแล้วเท่านั้น ไม่ใช่ค่าที่ submit
+ *
+ * ต้อง register ก่อน /api/auto/:command ด้านล่าง - ไม่งั้น Express จะจับ
+ * "settings" เป็นค่า :command แล้วตกไป fail ว่า "Invalid command: settings"
+ * ก่อนจะมาถึง route นี้เลย (Express match route บนลงล่าง, :command กิน
+ * segment ไหนก็ได้)
+ */
+app.post('/api/auto/settings', (req, res) => {
+  console.log('[AUTO SETTINGS RX] endpoint called, body =', JSON.stringify(req.body));
+
+  const { lightFanTimeout, acTimeout } = req.body || {};
+
+  if (typeof lightFanTimeout !== 'number' || lightFanTimeout < 1 || lightFanTimeout > 300) {
+    console.error('[AUTO SETTINGS RX] rejected: invalid lightFanTimeout', lightFanTimeout);
+    return fail(res, 400, 'lightFanTimeout must be a number between 1 and 300');
+  }
+  if (typeof acTimeout !== 'number' || acTimeout < 1 || acTimeout > 600) {
+    console.error('[AUTO SETTINGS RX] rejected: invalid acTimeout', acTimeout);
+    return fail(res, 400, 'acTimeout must be a number between 1 and 600');
+  }
+
+  console.log('[AUTO SETTINGS RX] validated payload:', JSON.stringify({ lightFanTimeout, acTimeout }));
+
+  const mqttPayload = { lightFanTimeout, acTimeout };
+  console.log('[AUTO SETTINGS MQTT] topic: home/control/auto/settings');
+  console.log('[AUTO SETTINGS MQTT] payload:', JSON.stringify(mqttPayload));
+
+  const err = publish('home/control/auto/settings', mqttPayload);
+  console.log('[AUTO SETTINGS MQTT] publish result:', err ? `FAILED - ${err}` : 'SUCCESS');
+  if (err) return fail(res, 503, err);
+
+  addLog('device_control', `Auto settings requested: lightFan=${lightFanTimeout}s ac=${acTimeout}s`, { source: 'web' });
+  return ok(res);
+});
+
+// ใช้ทั้งจาก /api/auto/:command (user) และ scene engine (internal) - logic เดียวกัน
+function setAutoMode(on) {
+  const mode = on ? 'on' : 'off';
+  state.autoMode = on;
+
+  console.log('[AUTO DEBUG] Publishing MQTT: topic=home/control/auto payload=', JSON.stringify({ mode }));
+
+  if (!mqttClient.connected) {
+    console.error('[AUTO DEBUG] MQTT NOT CONNECTED - COMMAND NOT SENT');
+    return 'MQTT not connected';
+  }
+
+  mqttClient.publish('home/control/auto', JSON.stringify({ mode }), { qos: 1 }, (err) => {
+    if (err) {
+      console.error('[AUTO DEBUG] MQTT PUBLISH FAILED', err);
+    } else {
+      console.log('[AUTO DEBUG] MQTT PUBLISH SUCCESS');
+    }
+  });
+
+  addLog('device_control', `Auto mode ${mode.toUpperCase()}`, { source: 'web' });
+  return null;
+}
+
+app.post('/api/auto/:command', (req, res) => {
+  const { command } = req.params;
+  console.log('[AUTO DEBUG] HTTP request received:', command.toUpperCase());
+
+  if (!['on', 'off', 'enable', 'disable'].includes(command)) {
+    console.error('[AUTO DEBUG] Invalid command param:', command);
+    return fail(res, 400, `Invalid command: ${command}`);
+  }
+
+  const on = command === 'on' || command === 'enable';
+  const error = setAutoMode(on);
+  if (error) return fail(res, 503, error);
+  return ok(res);
+});
+
+
+// ---------- Raw publish ----------
+
+app.post('/api/command', (req, res) => {
+  const { topic, payload } = req.body || {};
+  if (!topic || typeof topic !== 'string') {
+    return fail(res, 400, 'Field "topic" is required');
+  }
+
+  sendCommand(res, topic, payload ?? {}, `Custom command ${topic}`);
+});
+
+// ---------- History ----------
+
+app.get('/api/history', async (req, res) => {
+  try {
+    // Parse and validate parameters
+    const limit = Math.min(parseInt(req.query.limit, 10) || 50, 200);
+    const offset = parseInt(req.query.offset, 10) || 0;
+    const type = req.query.type || null;
+    const room = req.query.room || null;
+
+    // Check MySQL connection
+    if (!db.isConnected()) {
+      return fail(res, 503, 'Database unavailable');
+    }
+
+    // Query events
+    const events = await db.queryEvents({ limit, offset, type, room });
+    const total = await db.countEvents({ type, room });
+
+    res.json({
+      success: true,
+      data: events,
+      pagination: {
+        limit,
+        offset,
+        total
+      }
+    });
+  } catch (err) {
+    console.error('[History API] Query failed:', err.message);
+    fail(res, 500, 'Database query failed');
+  }
+});
+
+app.delete('/api/history', async (req, res) => {
+  try {
+    // Check MySQL connection
+    if (!db.isConnected()) {
+      return fail(res, 503, 'Database unavailable');
+    }
+
+    // Clear all event history
+    const deleted = await db.clearEvents();
+
+    res.json({
+      success: true,
+      message: 'History cleared successfully',
+      deleted
+    });
+  } catch (err) {
+    console.error('[History API] Clear failed:', err.message);
+    fail(res, 500, 'Failed to clear history');
+  }
+});
+
+// ---------- Telegram Settings ----------
+
+/**
+ * Send Telegram test notification (separate from motion alerts)
+ * Does NOT modify cooldown or check scene mode
+ */
+async function sendTelegramTestMessage() {
+  if (!telegramBot || !TELEGRAM_CHAT_ID) {
+    throw new Error('Telegram bot is not configured');
+  }
+
+  const timestamp = new Date().toISOString();
+  const message = `🧪 Smart Home Test Notification
+
+Telegram notification system is working correctly.
+
+Timestamp: ${timestamp}`;
+
+  await telegramBot.sendMessage(TELEGRAM_CHAT_ID, message);
+}
+
+app.get('/api/telegram/settings', async (req, res) => {
+  try {
+    // Check MySQL connection
+    if (!db.isConnected()) {
+      return fail(res, 503, 'Database unavailable');
+    }
+
+    // Query all settings
+    const [rows] = await db.pool.execute(
+      'SELECT setting_key, setting_value FROM telegram_settings'
+    );
+
+    // Convert rows to settings object
+    const settings = {};
+    rows.forEach(row => {
+      const key = row.setting_key;
+      let value = row.setting_value;
+
+      // Convert boolean strings
+      if ([
+        'telegram_enabled',
+        'alert_motion_enabled',
+        'alert_fingerprint_enabled',
+        'alert_security_enabled',
+        'motion_living_enabled',
+        'motion_kitchen_enabled',
+        'motion_bedroom_enabled'
+      ].includes(key)) {
+        value = value === 'true';
+      }
+      // Convert cooldown value to number
+      else if (key === 'telegram_cooldown_value') {
+        value = Number(value);
+      }
+
+      settings[key] = value;
+    });
+
+    res.json({
+      success: true,
+      settings
+    });
+  } catch (err) {
+    console.error('[Telegram Settings API] Query failed:', err.message);
+    fail(res, 500, 'Failed to load Telegram settings');
+  }
+});
+
+app.post('/api/telegram/settings', async (req, res) => {
+  let connection;
+
+  try {
+    // Validate request body
+    if (!req.body.settings || typeof req.body.settings !== 'object' || Array.isArray(req.body.settings)) {
+      return fail(res, 400, 'Settings object is required');
+    }
+
+    const settings = req.body.settings;
+    const keys = Object.keys(settings);
+
+    if (keys.length === 0) {
+      return fail(res, 400, 'Settings object is required');
+    }
+
+    // Whitelist of allowed setting keys
+    const allowedKeys = [
+      'telegram_enabled',
+      'telegram_cooldown_value',
+      'telegram_cooldown_unit',
+      'alert_motion_enabled',
+      'alert_fingerprint_enabled',
+      'alert_security_enabled',
+      'motion_living_enabled',
+      'motion_kitchen_enabled',
+      'motion_bedroom_enabled'
+    ];
+
+    // Check for unknown keys
+    for (const key of keys) {
+      if (!allowedKeys.includes(key)) {
+        return fail(res, 400, 'Invalid Telegram setting key');
+      }
+    }
+
+    // Validate each setting
+    for (const [key, value] of Object.entries(settings)) {
+      // Boolean settings
+      if ([
+        'telegram_enabled',
+        'alert_motion_enabled',
+        'alert_fingerprint_enabled',
+        'alert_security_enabled',
+        'motion_living_enabled',
+        'motion_kitchen_enabled',
+        'motion_bedroom_enabled'
+      ].includes(key)) {
+        if (typeof value !== 'boolean') {
+          return fail(res, 400, `Invalid value for ${key}: must be boolean`);
+        }
+      }
+      // Cooldown value
+      else if (key === 'telegram_cooldown_value') {
+        if (typeof value !== 'number' || !Number.isFinite(value) || !Number.isInteger(value) || value < 1 || value > 3600) {
+          return fail(res, 400, 'Invalid telegram_cooldown_value');
+        }
+      }
+      // Cooldown unit
+      else if (key === 'telegram_cooldown_unit') {
+        if (value !== 'seconds' && value !== 'minutes') {
+          return fail(res, 400, 'Invalid telegram_cooldown_unit');
+        }
+      }
+    }
+
+    // Check MySQL connection
+    if (!db.isConnected()) {
+      return fail(res, 503, 'Database unavailable');
+    }
+
+    // Get connection for transaction
+    connection = await db.pool.getConnection();
+    await connection.beginTransaction();
+
+    // Update each setting
+    for (const [key, value] of Object.entries(settings)) {
+      const stringValue = String(value);
+
+      await connection.execute(
+        `INSERT INTO telegram_settings (setting_key, setting_value)
+         VALUES (?, ?)
+         ON DUPLICATE KEY UPDATE
+           setting_value = VALUES(setting_value),
+           updated_at = CURRENT_TIMESTAMP`,
+        [key, stringValue]
+      );
+    }
+
+    await connection.commit();
+
+    res.json({
+      success: true,
+      message: 'Telegram settings saved successfully'
+    });
+  } catch (err) {
+    if (connection) {
+      await connection.rollback();
+    }
+    console.error('[Telegram Settings API] Save failed:', err.message);
+    fail(res, 500, 'Failed to save Telegram settings');
+  } finally {
+    if (connection) {
+      connection.release();
+    }
+  }
+});
+
+app.post('/api/telegram/test', async (req, res) => {
+  try {
+    // Check if Telegram is configured
+    if (!telegramBot || !TELEGRAM_CHAT_ID) {
+      return fail(res, 503, 'Telegram bot is not configured');
+    }
+
+    // Send test message
+    await sendTelegramTestMessage();
+
+    res.json({
+      success: true,
+      message: 'Test notification sent successfully'
+    });
+  } catch (err) {
+    console.error('[Telegram Test API] Failed:', err.message);
+    fail(res, 500, 'Failed to send Telegram test notification');
+  }
+});
+
+// ---------- Fallback ----------
+
+app.use('/api', (req, res) => fail(res, 404, 'Endpoint not found'));
+
+/* =====================================================
+   STARTUP / SHUTDOWN
+===================================================== */
+
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => console.log(`[SERVER] http://localhost:${PORT}`));
+
+function shutdown() {
+  console.log('\n[SERVER] Shutting down...');
+  wss.clients.forEach(c => c.close());
+  mqttClient.end(true);
+  server.close(() => process.exit(0));
+  setTimeout(() => process.exit(0), 3000);
+}
+
+process.on('SIGINT', shutdown);
+process.on('SIGTERM', shutdown);

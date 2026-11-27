@@ -1,0 +1,80 @@
+[TELEGRAM] Bot initialized - Security alerts enabled
+[SERVER] http://localhost:3000
+[MySQL] Connection pool established
+[AUTH] MySQL session store ready
+[WS] Upgrade request received
+[WS] Session authenticated, upgrading connection
+[WS] +1 client, total: 1
+[MQTT] Connected
+[WS] -1 client, total: 0
+[WS] Upgrade request received
+[WS] Session authenticated, upgrading connection
+[WS] +1 client, total: 1
+[Scene Execution] Running scene 2 - Home Mode with 4 actions
+[MQTT] -> home/control/living/led {"state":true}
+[Scene Execution] home/control/living/led => {"state":true}
+[MQTT] -> home/control/kitchen/led {"state":true}
+[Scene Execution] home/control/kitchen/led => {"state":true}
+[MQTT] -> home/control/living/fan {"state":true}
+[Scene Execution] home/control/living/fan => {"state":true}
+[AUTO DEBUG] Publishing MQTT: topic=home/control/auto payload= {"mode":"on"}
+[Scene Execution] Auto mode: true
+[Scene Execution] Scene 2 executed successfully via API
+[AUTO DEBUG] MQTT PUBLISH SUCCESS
+[Scene Execution] Running scene 2 - Home Mode with 4 actions
+[MQTT] -> home/control/living/led {"state":true}
+[Scene Execution] home/control/living/led => {"state":true}
+[MQTT] -> home/control/kitchen/led {"state":true}
+[Scene Execution] home/control/kitchen/led => {"state":true}
+[MQTT] -> home/control/living/fan {"state":true}
+[Scene Execution] home/control/living/fan => {"state":true}
+[AUTO DEBUG] Publishing MQTT: topic=home/control/auto payload= {"mode":"on"}
+[Scene Execution] Auto mode: true
+[Scene Execution] Scene 2 executed successfully via API
+[AUTO DEBUG] MQTT PUBLISH SUCCESS
+[Scene Execution] Running scene 2 - Home Mode with 4 actions
+[MQTT] -> home/control/living/led {"state":true}
+[Scene Execution] home/control/living/led => {"state":true}
+[MQTT] -> home/control/kitchen/led {"state":true}
+[Scene Execution] home/control/kitchen/led => {"state":true}
+[MQTT] -> home/control/living/fan {"state":true}
+[Scene Execution] home/control/living/fan => {"state":true}
+[AUTO DEBUG] Publishing MQTT: topic=home/control/auto payload= {"mode":"on"}
+[Scene Execution] Auto mode: true
+[Scene Execution] Scene 2 executed successfully via API
+[AUTO DEBUG] MQTT PUBLISH SUCCESS
+[WS] -1 client, total: 0
+[Scene Execution] Running scene 3 - Sleep Mode with 9 actions
+[MQTT] -> home/control/living/led {"state":false}
+[Scene Execution] home/control/living/led => {"state":false}
+[MQTT] -> home/control/kitchen/led {"state":false}
+[Scene Execution] home/control/kitchen/led => {"state":false}
+[MQTT] -> home/control/bedroom/led {"state":false}
+[Scene Execution] home/control/bedroom/led => {"state":false}
+[MQTT] -> home/control/kitchen/window {"angle":0}
+[Scene Execution] home/control/kitchen/window => {"angle":0}
+[MQTT] -> home/control/bedroom/window {"angle":0}
+[Scene Execution] home/control/bedroom/window => {"angle":0}
+[MQTT] -> home/control/bedroom/ac {"level":70}
+[Scene Execution] home/control/bedroom/ac => {"level":70}
+[MQTT] -> home/control/living/fan {"state":false}
+[Scene Execution] home/control/living/fan => {"state":false}
+[MQTT] -> home/control/kitchen/fan {"state":false}
+[Scene Execution] home/control/kitchen/fan => {"state":false}
+[AUTO DEBUG] Publishing MQTT: topic=home/control/auto payload= {"mode":"off"}
+[Scene Execution] Auto mode: false
+[Scene Execution] Scene 3 executed successfully via API
+[AUTO DEBUG] MQTT PUBLISH SUCCESS
+[WS] Upgrade request received
+[WS] Session authenticated, upgrading connection
+[WS] +1 client, total: 1
+[WS] -1 client, total: 0
+[WS] Upgrade request received
+[WS] Session authenticated, upgrading connection
+[WS] +1 client, total: 1
+[WS] -1 client, total: 0
+[WS] Upgrade request received
+[WS] Session authenticated, upgrading connection
+[WS] +1 client, total: 1
+[MQTT] Connected
+[MQTT] Connected

@@ -1,0 +1,3320 @@
+[TELEGRAM] Bot initialized - Security alerts enabled
+[SERVER] http://localhost:3000
+[MySQL] Connection pool established
+[WS] +1 client, total: 1
+[MQTT] Connected
+[WS] -1 client, total: 0
+[WS] +1 client, total: 1
+[WS] -1 client, total: 0
+[WS] +1 client, total: 1
+[WS] -1 client, total: 0
+[WS] +1 client, total: 1
+[WS] -1 client, total: 0
+[WS] +1 client, total: 1
+[WS] -1 client, total: 0
+[WS] +1 client, total: 1
+[WS] -1 client, total: 0
+[WS] +1 client, total: 1
+[MQTT] -> home/control/living/led {"state":false}
+[MQTT] -> home/control/kitchen/led {"state":false}
+[MQTT] -> home/control/bedroom/led {"state":false}
+[MQTT] -> home/control/kitchen/window {"angle":0}
+[MQTT] -> home/control/bedroom/window {"angle":0}
+[MQTT] -> home/control/living/fan {"state":false}
+[MQTT] -> home/control/kitchen/fan {"state":false}
+[MQTT] -> home/control/bedroom/fan {"state":false}
+[MQTT] -> home/control/bedroom/ac {"level":0}
+[MQTT] -> home/control/living/ac {"level":0}
+[AUTO DEBUG] Publishing MQTT: topic=home/control/auto payload= {"mode":"off"}
+[AUTO DEBUG] MQTT PUBLISH SUCCESS
+[MQTT] -> home/control/bedroom/window {"angle":180}
+[MQTT] -> home/control/bedroom/ac {"level":0}
+[MQTT] -> home/control/bedroom/fan {"state":true}
+[MQTT] -> home/control/bedroom/led {"state":true}
+[MQTT] -> home/control/bedroom/window {"angle":0}
+[MQTT] -> home/control/bedroom/led {"state":false}
+[MQTT] -> home/control/bedroom/fan {"state":false}
+[MQTT] -> home/control/living/led {"state":true}
+[MQTT] -> home/control/kitchen/led {"state":true}
+[MQTT] -> home/control/living/fan {"state":true}
+[AUTO DEBUG] Publishing MQTT: topic=home/control/auto payload= {"mode":"on"}
+[AUTO DEBUG] MQTT PUBLISH SUCCESS
+[ESP32 DEBUG] [AUTO MODE] Enabled
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 2s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 2s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 2s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 3s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 3s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 3s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 4s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 4s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 4s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 5s
+[ESP32 DEBUG] [AUTO TIMEOUT] Living Room LIGHT/FAN timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Living Room LED OFF
+[ESP32 DEBUG] [AUTO SHUTDOWN] Living Room FAN OFF
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 5s
+[ESP32 DEBUG] [AUTO TIMEOUT] Kitchen LIGHT/FAN timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Kitchen LED OFF
+[ESP32 DEBUG] [AUTO SHUTDOWN] Kitchen FAN OFF
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 5s
+[ESP32 DEBUG] [AUTO TIMEOUT] Bedroom LIGHT/FAN timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Bedroom LED OFF
+[ESP32 DEBUG] [AUTO SHUTDOWN] Bedroom FAN OFF
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 6s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 6s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 6s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 7s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 7s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 7s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 8s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 8s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 8s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 9s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 9s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 9s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 10s
+[ESP32 DEBUG] [AUTO TIMEOUT] Living Room AC timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Living Room AC OFF
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 10s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 10s
+[ESP32 DEBUG] [AUTO TIMEOUT] Bedroom AC timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Bedroom AC OFF
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 11s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 11s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 11s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 12s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 12s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 12s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 13s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 13s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 13s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 14s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 14s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 14s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 15s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 15s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 15s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 16s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 16s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 16s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 17s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 17s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 17s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 18s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 18s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 18s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 19s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 19s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 19s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 20s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 20s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 20s
+[MQTT] -> home/control/living/led {"state":false}
+[MQTT] -> home/control/kitchen/led {"state":false}
+[MQTT] -> home/control/bedroom/led {"state":false}
+[MQTT] -> home/control/kitchen/window {"angle":0}
+[MQTT] -> home/control/bedroom/window {"angle":0}
+[MQTT] -> home/control/living/fan {"state":false}
+[MQTT] -> home/control/kitchen/fan {"state":false}
+[MQTT] -> home/control/bedroom/fan {"state":false}
+[MQTT] -> home/control/bedroom/ac {"level":0}
+[MQTT] -> home/control/living/ac {"level":0}
+[AUTO DEBUG] Publishing MQTT: topic=home/control/auto payload= {"mode":"off"}
+[AUTO DEBUG] MQTT PUBLISH SUCCESS
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 21s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 21s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 21s
+[TELEGRAM] Alert sent: Motion in living during Away Mode
+[MQTT] -> home/control/living/led {"state":true}
+[MQTT] -> home/control/kitchen/led {"state":true}
+[MQTT] -> home/control/living/fan {"state":true}
+[AUTO DEBUG] Publishing MQTT: topic=home/control/auto payload= {"mode":"on"}
+[AUTO DEBUG] MQTT PUBLISH SUCCESS
+[ESP32 DEBUG] [AUTO MODE] Enabled
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 2s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 2s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 2s
+[MQTT] -> home/control/living/led {"state":false}
+[MQTT] -> home/control/kitchen/led {"state":false}
+[MQTT] -> home/control/bedroom/led {"state":false}
+[MQTT] -> home/control/kitchen/window {"angle":0}
+[MQTT] -> home/control/bedroom/window {"angle":0}
+[MQTT] -> home/control/bedroom/ac {"level":70}
+[MQTT] -> home/control/living/fan {"state":false}
+[MQTT] -> home/control/kitchen/fan {"state":false}
+[AUTO DEBUG] Publishing MQTT: topic=home/control/auto payload= {"mode":"off"}
+[AUTO DEBUG] MQTT PUBLISH SUCCESS
+[MQTT] -> home/control/bedroom/window {"angle":180}
+[MQTT] -> home/control/bedroom/ac {"level":0}
+[MQTT] -> home/control/bedroom/fan {"state":true}
+[MQTT] -> home/control/bedroom/led {"state":true}
+[TELEGRAM] Alert sent: Motion in kitchen during Sleep Mode
+[MQTT] -> home/control/living/led {"state":false}
+[MQTT] -> home/control/kitchen/led {"state":false}
+[MQTT] -> home/control/bedroom/led {"state":false}
+[MQTT] -> home/control/kitchen/window {"angle":0}
+[MQTT] -> home/control/bedroom/window {"angle":0}
+[MQTT] -> home/control/living/fan {"state":false}
+[MQTT] -> home/control/kitchen/fan {"state":false}
+[MQTT] -> home/control/bedroom/fan {"state":false}
+[MQTT] -> home/control/bedroom/ac {"level":0}
+[MQTT] -> home/control/living/ac {"level":0}
+[AUTO DEBUG] Publishing MQTT: topic=home/control/auto payload= {"mode":"off"}
+[AUTO DEBUG] MQTT PUBLISH SUCCESS
+[MQTT] -> home/control/bedroom/window {"angle":180}
+[MQTT] -> home/control/bedroom/ac {"level":0}
+[MQTT] -> home/control/bedroom/fan {"state":true}
+[MQTT] -> home/control/bedroom/led {"state":true}
+[MQTT] -> home/control/living/led {"state":false}
+[MQTT] -> home/control/kitchen/led {"state":false}
+[MQTT] -> home/control/bedroom/led {"state":false}
+[MQTT] -> home/control/kitchen/window {"angle":0}
+[MQTT] -> home/control/bedroom/window {"angle":0}
+[MQTT] -> home/control/living/fan {"state":false}
+[MQTT] -> home/control/kitchen/fan {"state":false}
+[MQTT] -> home/control/bedroom/fan {"state":false}
+[MQTT] -> home/control/bedroom/ac {"level":0}
+[MQTT] -> home/control/living/ac {"level":0}
+[AUTO DEBUG] Publishing MQTT: topic=home/control/auto payload= {"mode":"off"}
+[AUTO DEBUG] MQTT PUBLISH SUCCESS
+[TELEGRAM] Alert sent: Motion in bedroom during Away Mode
+[MQTT] -> home/control/living/ac {"level":70}
+[MQTT] -> home/control/living/ac {"level":100}
+[MQTT] -> home/control/living/ac {"level":0}
+[MQTT] -> home/control/living/fan {"state":true}
+[MQTT] -> home/control/living/led {"state":true}
+[AUTO DEBUG] HTTP request received: ON
+[AUTO DEBUG] Publishing MQTT: topic=home/control/auto payload= {"mode":"on"}
+[AUTO DEBUG] MQTT PUBLISH SUCCESS
+[ESP32 DEBUG] [AUTO MODE] Enabled
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 2s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 2s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 2s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 3s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 3s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 3s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 4s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 4s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 4s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 5s
+[ESP32 DEBUG] [AUTO TIMEOUT] Living Room LIGHT/FAN timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Living Room LED OFF
+[ESP32 DEBUG] [AUTO SHUTDOWN] Living Room FAN OFF
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 5s
+[ESP32 DEBUG] [AUTO TIMEOUT] Kitchen LIGHT/FAN timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Kitchen LED OFF
+[ESP32 DEBUG] [AUTO SHUTDOWN] Kitchen FAN OFF
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 5s
+[ESP32 DEBUG] [AUTO TIMEOUT] Bedroom LIGHT/FAN timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Bedroom LED OFF
+[ESP32 DEBUG] [AUTO SHUTDOWN] Bedroom FAN OFF
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 6s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 6s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 6s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 7s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 7s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 7s
+[ESP32 DEBUG] [AUTO PIR] Kitchen MOTION DETECTED
+[ESP32 DEBUG] [AUTO RESTORE] Kitchen restoring LED -> OFF
+[ESP32 DEBUG] [AUTO RESTORE] Kitchen restoring FAN -> OFF
+[ESP32 DEBUG] [AUTO PIR] Living Room MOTION DETECTED
+[ESP32 DEBUG] [AUTO RESTORE] Living Room restoring LED -> ON
+[ESP32 DEBUG] [AUTO RESTORE] Living Room restoring FAN -> ON
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 8s
+[TELEGRAM] Alert sent: Motion in living during Away Mode
+[TELEGRAM] Alert sent: Motion in kitchen during Away Mode
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 9s
+[MQTT] -> home/control/living/fan {"state":false}
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 10s
+[ESP32 DEBUG] [AUTO TIMEOUT] Bedroom AC timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Bedroom AC OFF
+[ESP32 DEBUG] [AUTO PIR] Kitchen NO MOTION
+[ESP32 DEBUG] [AUTO TIMER] Kitchen timer started
+[TELEGRAM] Alert blocked (cooldown active): living
+[MQTT] -> home/control/living/led {"state":false}
+[ESP32 DEBUG] [AUTO PIR] Living Room NO MOTION
+[ESP32 DEBUG] [AUTO TIMER] Living Room timer started
+[AUTO DEBUG] HTTP request received: OFF
+[AUTO DEBUG] Publishing MQTT: topic=home/control/auto payload= {"mode":"off"}
+[AUTO DEBUG] MQTT PUBLISH SUCCESS
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 0s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 11s
+[MQTT] -> home/control/living/ac {"level":70}
+[MQTT] -> home/control/living/ac {"level":90}
+[MQTT] -> home/control/living/fan {"state":true}
+[MQTT] -> home/control/living/led {"state":true}
+[AUTO DEBUG] HTTP request received: ON
+[AUTO DEBUG] Publishing MQTT: topic=home/control/auto payload= {"mode":"on"}
+[AUTO DEBUG] MQTT PUBLISH SUCCESS
+[ESP32 DEBUG] [AUTO MODE] Enabled
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 2s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 2s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 2s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 3s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 3s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 3s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 4s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 4s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 4s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 5s
+[ESP32 DEBUG] [AUTO TIMEOUT] Living Room LIGHT/FAN timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Living Room LED OFF
+[ESP32 DEBUG] [AUTO SHUTDOWN] Living Room FAN OFF
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 5s
+[ESP32 DEBUG] [AUTO TIMEOUT] Kitchen LIGHT/FAN timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Kitchen LED OFF
+[ESP32 DEBUG] [AUTO SHUTDOWN] Kitchen FAN OFF
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 5s
+[ESP32 DEBUG] [AUTO TIMEOUT] Bedroom LIGHT/FAN timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Bedroom LED OFF
+[ESP32 DEBUG] [AUTO SHUTDOWN] Bedroom FAN OFF
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 6s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 6s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 6s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 7s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 7s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 7s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 8s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 8s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 8s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 9s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 9s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 9s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 10s
+[ESP32 DEBUG] [AUTO TIMEOUT] Living Room AC timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Living Room AC OFF
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 10s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 10s
+[ESP32 DEBUG] [AUTO TIMEOUT] Bedroom AC timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Bedroom AC OFF
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 11s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 11s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 11s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 12s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 12s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 12s
+[ESP32 DEBUG] [AUTO PIR] Kitchen MOTION DETECTED
+[ESP32 DEBUG] [AUTO RESTORE] Kitchen restoring LED -> OFF
+[ESP32 DEBUG] [AUTO RESTORE] Kitchen restoring FAN -> OFF
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 13s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 13s
+[TELEGRAM] Alert sent: Motion in kitchen during Away Mode
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 14s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 14s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 15s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 15s
+[TELEGRAM] Alert blocked (cooldown active): kitchen
+[ESP32 DEBUG] [AUTO PIR] Kitchen NO MOTION
+[ESP32 DEBUG] [AUTO TIMER] Kitchen timer started
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 16s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 0s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 16s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 17s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 17s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 18s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 2s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 18s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 19s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 3s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 19s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 20s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 4s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 20s
+[ESP32 DEBUG] [AUTO TIMEOUT] Kitchen LIGHT/FAN timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Kitchen LED OFF
+[ESP32 DEBUG] [AUTO SHUTDOWN] Kitchen FAN OFF
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 21s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 5s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 21s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 22s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 6s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 22s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 23s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 7s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 23s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 24s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 8s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 24s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 25s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 9s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 25s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 26s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 10s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 26s
+[MQTT] -> home/control/living/led {"state":true}
+[MQTT] -> home/control/kitchen/led {"state":true}
+[MQTT] -> home/control/living/fan {"state":true}
+[AUTO DEBUG] Publishing MQTT: topic=home/control/auto payload= {"mode":"on"}
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 27s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 11s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 27s
+[AUTO DEBUG] MQTT PUBLISH SUCCESS
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 0s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 0s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 28s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 29s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 2s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 2s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 30s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 3s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 3s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 31s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 4s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 4s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 32s
+[ESP32 DEBUG] [AUTO TIMEOUT] Kitchen LIGHT/FAN timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Kitchen LED OFF
+[ESP32 DEBUG] [AUTO SHUTDOWN] Kitchen FAN OFF
+[ESP32 DEBUG] [AUTO TIMEOUT] Living Room LIGHT/FAN timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Living Room LED OFF
+[ESP32 DEBUG] [AUTO SHUTDOWN] Living Room FAN OFF
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 5s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 5s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 33s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 6s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 6s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 34s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 7s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 7s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 35s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 8s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 8s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 36s
+[MQTT] -> home/control/living/ac {"level":70}
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 9s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 9s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 37s
+[ESP32 DEBUG] [AUTO TIMEOUT] Living Room AC timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Living Room AC OFF
+[MQTT] -> home/control/living/ac {"level":90}
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 0s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 10s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 38s
+[MQTT] -> home/control/living/fan {"state":true}
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 11s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 39s
+[MQTT] -> home/control/living/led {"state":true}
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 0s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 12s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 40s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 13s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 41s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 2s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 14s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 42s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 3s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 15s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 43s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 4s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 16s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 44s
+[ESP32 DEBUG] [AUTO TIMEOUT] Living Room LIGHT/FAN timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Living Room LED OFF
+[ESP32 DEBUG] [AUTO SHUTDOWN] Living Room FAN OFF
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 5s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 17s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 45s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 6s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 18s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 46s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 7s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 19s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 47s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 8s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 20s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 48s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 9s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 21s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 49s
+[ESP32 DEBUG] [AUTO TIMEOUT] Living Room AC timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Living Room AC OFF
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 10s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 22s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 50s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 11s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 23s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 51s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 12s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 24s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 52s
+[ESP32 DEBUG] [AUTO PIR] Living Room MOTION DETECTED
+[ESP32 DEBUG] [AUTO RESTORE] Living Room restoring LED -> ON
+[ESP32 DEBUG] [AUTO RESTORE] Living Room restoring FAN -> ON
+[ESP32 DEBUG] [AUTO RESTORE] Living Room restoring AC -> 90
+[ESP32 DEBUG] [AUTO PIR] Kitchen MOTION DETECTED
+[ESP32 DEBUG] [AUTO RESTORE] Kitchen restoring LED -> ON
+[ESP32 DEBUG] [AUTO RESTORE] Kitchen restoring FAN -> OFF
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 53s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 54s
+[ESP32 DEBUG] [AUTO PIR] Living Room NO MOTION
+[ESP32 DEBUG] [AUTO TIMER] Living Room timer started
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 0s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 55s
+[ESP32 DEBUG] [AUTO PIR] Kitchen NO MOTION
+[ESP32 DEBUG] [AUTO TIMER] Kitchen timer started
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 0s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 56s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 2s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 57s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 3s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 2s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 58s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 4s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 3s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 59s
+[ESP32 DEBUG] [AUTO TIMEOUT] Living Room LIGHT/FAN timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Living Room LED OFF
+[ESP32 DEBUG] [AUTO SHUTDOWN] Living Room FAN OFF
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 5s
+[MQTT] -> home/control/living/ac {"level":100}
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 4s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 60s
+[ESP32 DEBUG] [AUTO TIMEOUT] Kitchen LIGHT/FAN timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Kitchen LED OFF
+[ESP32 DEBUG] [AUTO SHUTDOWN] Kitchen FAN OFF
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 0s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 5s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 61s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 6s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 62s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 2s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 7s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 63s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 3s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 8s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 64s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 4s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 9s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 65s
+[ESP32 DEBUG] [AUTO TIMEOUT] Living Room LIGHT/FAN timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Living Room LED OFF
+[ESP32 DEBUG] [AUTO SHUTDOWN] Living Room FAN OFF
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 5s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 10s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 66s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 6s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 11s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 67s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 7s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 12s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 68s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 8s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 13s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 69s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 9s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 14s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 70s
+[ESP32 DEBUG] [AUTO TIMEOUT] Living Room AC timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Living Room AC OFF
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 10s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 15s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 71s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 11s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 16s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 72s
+[ESP32 DEBUG] [AUTO PIR] Kitchen MOTION DETECTED
+[ESP32 DEBUG] [AUTO RESTORE] Kitchen restoring LED -> ON
+[ESP32 DEBUG] [AUTO RESTORE] Kitchen restoring FAN -> OFF
+[ESP32 DEBUG] [AUTO PIR] Living Room MOTION DETECTED
+[ESP32 DEBUG] [AUTO RESTORE] Living Room restoring LED -> ON
+[ESP32 DEBUG] [AUTO RESTORE] Living Room restoring FAN -> ON
+[ESP32 DEBUG] [AUTO RESTORE] Living Room restoring AC -> 100
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 73s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 74s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 75s
+[ESP32 DEBUG] [AUTO PIR] Kitchen NO MOTION
+[ESP32 DEBUG] [AUTO TIMER] Kitchen timer started
+[ESP32 DEBUG] [AUTO PIR] Living Room NO MOTION
+[ESP32 DEBUG] [AUTO TIMER] Living Room timer started
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 0s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 0s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 76s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 77s
+[MQTT] -> home/control/living/fan {"state":false}
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 2s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 2s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 78s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 0s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 3s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 79s
+[MQTT] -> home/control/living/led {"state":false}
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 4s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 80s
+[ESP32 DEBUG] [AUTO TIMEOUT] Kitchen LIGHT/FAN timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Kitchen LED OFF
+[ESP32 DEBUG] [AUTO SHUTDOWN] Kitchen FAN OFF
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 0s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 5s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 81s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 6s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 82s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 2s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 7s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 83s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 3s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 8s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 84s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 4s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 9s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 85s
+[ESP32 DEBUG] [AUTO TIMEOUT] Living Room LIGHT/FAN timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Living Room LED OFF
+[ESP32 DEBUG] [AUTO SHUTDOWN] Living Room FAN OFF
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 5s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 10s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 86s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 6s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 11s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 87s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 7s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 12s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 88s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 8s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 13s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 89s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 9s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 14s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 90s
+[ESP32 DEBUG] [AUTO TIMEOUT] Living Room AC timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Living Room AC OFF
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 10s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 15s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 91s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 11s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 16s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 92s
+[ESP32 DEBUG] [AUTO PIR] Kitchen MOTION DETECTED
+[ESP32 DEBUG] [AUTO RESTORE] Kitchen restoring LED -> ON
+[ESP32 DEBUG] [AUTO RESTORE] Kitchen restoring FAN -> OFF
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 12s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 93s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 13s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 94s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 14s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 95s
+[ESP32 DEBUG] [AUTO PIR] Kitchen NO MOTION
+[ESP32 DEBUG] [AUTO TIMER] Kitchen timer started
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 15s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 0s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 96s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 16s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 97s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 17s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 2s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 98s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 18s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 3s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 99s
+[ESP32 DEBUG] [AUTO PIR] Bedroom MOTION DETECTED
+[ESP32 DEBUG] [AUTO RESTORE] Bedroom restoring LED -> OFF
+[ESP32 DEBUG] [AUTO RESTORE] Bedroom restoring FAN -> OFF
+[ESP32 DEBUG] [AUTO RESTORE] Bedroom restoring AC -> 0
+[ESP32 DEBUG] [AUTO PIR] Living Room MOTION DETECTED
+[ESP32 DEBUG] [AUTO RESTORE] Living Room restoring LED -> OFF
+[ESP32 DEBUG] [AUTO RESTORE] Living Room restoring FAN -> OFF
+[ESP32 DEBUG] [AUTO RESTORE] Living Room restoring AC -> 100
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 4s
+[ESP32 DEBUG] [AUTO TIMEOUT] Kitchen LIGHT/FAN timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Kitchen LED OFF
+[ESP32 DEBUG] [AUTO SHUTDOWN] Kitchen FAN OFF
+[ESP32 DEBUG] [AUTO PIR] Kitchen MOTION DETECTED
+[ESP32 DEBUG] [AUTO RESTORE] Kitchen restoring LED -> ON
+[ESP32 DEBUG] [AUTO RESTORE] Kitchen restoring FAN -> OFF
+[ESP32 DEBUG] [AUTO PIR] Bedroom NO MOTION
+[ESP32 DEBUG] [AUTO TIMER] Bedroom timer started
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 0s
+[ESP32 DEBUG] [AUTO PIR] Living Room NO MOTION
+[ESP32 DEBUG] [AUTO TIMER] Living Room timer started
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 0s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 1s
+[ESP32 DEBUG] [AUTO PIR] Kitchen NO MOTION
+[ESP32 DEBUG] [AUTO TIMER] Kitchen timer started
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 0s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 2s
+[MQTT] -> home/control/living/ac {"level":0}
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 2s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 3s
+[AUTO DEBUG] HTTP request received: OFF
+[AUTO DEBUG] Publishing MQTT: topic=home/control/auto payload= {"mode":"off"}
+[AUTO DEBUG] MQTT PUBLISH SUCCESS
+[AUTO DEBUG] HTTP request received: ON
+[AUTO DEBUG] Publishing MQTT: topic=home/control/auto payload= {"mode":"on"}
+[AUTO DEBUG] MQTT PUBLISH SUCCESS
+[ESP32 DEBUG] [AUTO MODE] Enabled
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 1s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 2s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 2s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 2s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 3s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 3s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 3s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 4s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 4s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 4s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 5s
+[ESP32 DEBUG] [AUTO TIMEOUT] Living Room LIGHT/FAN timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Living Room LED OFF
+[ESP32 DEBUG] [AUTO SHUTDOWN] Living Room FAN OFF
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 5s
+[ESP32 DEBUG] [AUTO TIMEOUT] Kitchen LIGHT/FAN timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Kitchen LED OFF
+[ESP32 DEBUG] [AUTO SHUTDOWN] Kitchen FAN OFF
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 5s
+[ESP32 DEBUG] [AUTO TIMEOUT] Bedroom LIGHT/FAN timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Bedroom LED OFF
+[ESP32 DEBUG] [AUTO SHUTDOWN] Bedroom FAN OFF
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 6s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 6s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 6s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 7s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 7s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 7s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 8s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 8s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 8s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 9s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 9s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 9s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 10s
+[ESP32 DEBUG] [AUTO TIMEOUT] Living Room AC timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Living Room AC OFF
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 10s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 10s
+[ESP32 DEBUG] [AUTO TIMEOUT] Bedroom AC timeout reached
+[ESP32 DEBUG] [AUTO SHUTDOWN] Bedroom AC OFF
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 11s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 11s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 11s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 12s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 12s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 12s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 13s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 13s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 13s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 14s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 14s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 14s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 15s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 15s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 15s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 16s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 16s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 16s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 17s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 17s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 17s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 18s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 18s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 18s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 19s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 19s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 19s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 20s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 20s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 20s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 21s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 21s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 21s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 22s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 22s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 22s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 23s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 23s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 23s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 24s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 24s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 24s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 25s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 25s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 25s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 26s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 26s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 26s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 27s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 27s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 27s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 28s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 28s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 28s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 29s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 29s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 29s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 30s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 30s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 30s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 31s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 31s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 31s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 32s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 32s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 32s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 33s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 33s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 33s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 34s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 34s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 34s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 35s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 35s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 35s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 36s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 36s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 36s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 37s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 37s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 37s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 38s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 38s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 38s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 39s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 39s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 39s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 40s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 40s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 40s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 41s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 41s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 41s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 42s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 42s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 42s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 43s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 43s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 43s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 44s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 44s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 44s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 45s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 45s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 45s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 46s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 46s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 46s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 47s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 47s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 47s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 48s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 48s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 48s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 49s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 49s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 49s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 50s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 50s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 50s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 51s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 51s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 51s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 52s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 52s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 52s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 53s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 53s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 53s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 54s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 54s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 54s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 55s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 55s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 55s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 56s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 56s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 56s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 57s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 57s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 57s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 58s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 58s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 58s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 59s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 59s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 59s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 60s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 60s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 60s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 61s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 61s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 61s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 62s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 62s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 62s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 63s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 63s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 63s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 64s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 64s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 64s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 65s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 65s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 65s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 66s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 66s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 66s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 67s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 67s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 67s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 68s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 68s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 68s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 69s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 69s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 69s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 70s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 70s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 70s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 71s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 71s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 71s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 72s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 72s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 72s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 73s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 73s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 73s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 74s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 74s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 74s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 75s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 75s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 75s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 76s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 76s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 76s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 77s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 77s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 77s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 78s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 78s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 78s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 79s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 79s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 79s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 80s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 80s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 80s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 81s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 81s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 81s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 82s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 82s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 82s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 83s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 83s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 83s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 84s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 84s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 84s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 85s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 85s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 85s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 86s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 86s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 86s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 87s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 87s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 87s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 88s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 88s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 88s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 89s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 89s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 89s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 90s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 90s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 90s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 91s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 91s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 91s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 92s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 92s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 92s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 93s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 93s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 93s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 94s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 94s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 94s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 95s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 95s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 95s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 96s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 96s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 96s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 97s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 97s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 97s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 98s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 98s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 98s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 99s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 99s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 99s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 100s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 100s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 100s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 101s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 101s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 101s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 102s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 102s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 102s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 103s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 103s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 103s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 104s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 104s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 104s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 105s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 105s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 105s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 106s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 106s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 106s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 107s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 107s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 107s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 108s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 108s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 108s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 109s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 109s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 109s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 110s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 110s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 110s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 111s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 111s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 111s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 112s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 112s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 112s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 113s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 113s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 113s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 114s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 114s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 114s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 115s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 115s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 115s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 116s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 116s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 116s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 117s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 117s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 117s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 118s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 118s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 118s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 119s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 119s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 119s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 120s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 120s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 120s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 121s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 121s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 121s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 122s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 122s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 122s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 123s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 123s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 123s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 124s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 124s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 124s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 125s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 125s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 125s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 126s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 126s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 126s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 127s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 127s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 127s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 128s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 128s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 128s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 129s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 129s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 129s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 130s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 130s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 130s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 131s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 131s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 131s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 132s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 132s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 132s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 133s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 133s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 133s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 134s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 134s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 134s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 135s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 135s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 135s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 136s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 136s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 136s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 137s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 137s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 137s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 138s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 138s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 138s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 139s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 139s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 139s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 140s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 140s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 140s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 141s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 141s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 141s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 142s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 142s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 142s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 143s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 143s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 143s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 144s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 144s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 144s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 145s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 145s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 145s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 146s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 146s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 146s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 147s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 147s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 147s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 148s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 148s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 148s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 149s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 149s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 149s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 150s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 150s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 150s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 151s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 151s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 151s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 152s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 152s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 152s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 153s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 153s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 153s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 154s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 154s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 154s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 155s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 155s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 155s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 156s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 156s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 156s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 157s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 157s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 157s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 158s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 158s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 158s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 159s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 159s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 159s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 160s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 160s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 160s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 161s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 161s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 161s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 162s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 162s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 162s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 163s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 163s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 163s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 164s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 164s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 164s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 165s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 165s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 165s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 166s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 166s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 166s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 167s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 167s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 167s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 168s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 168s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 168s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 169s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 169s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 169s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 170s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 170s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 170s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 171s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 171s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 171s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 172s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 172s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 172s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 173s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 173s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 173s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 174s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 174s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 174s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 175s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 175s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 175s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 176s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 176s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 176s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 177s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 177s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 177s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 178s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 178s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 178s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 179s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 179s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 179s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 180s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 180s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 180s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 181s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 181s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 181s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 182s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 182s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 182s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 183s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 183s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 183s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 184s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 184s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 184s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 185s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 185s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 185s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 186s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 186s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 186s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 187s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 187s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 187s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 188s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 188s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 188s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 189s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 189s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 189s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 190s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 190s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 190s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 191s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 191s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 191s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 192s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 192s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 192s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 193s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 193s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 193s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 194s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 194s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 194s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 195s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 195s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 195s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 196s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 196s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 196s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 197s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 197s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 197s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 198s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 198s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 198s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 199s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 199s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 199s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 200s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 200s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 200s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 201s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 201s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 201s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 202s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 202s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 202s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 203s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 203s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 203s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 204s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 204s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 204s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 205s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 205s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 205s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 206s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 206s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 206s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 207s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 207s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 207s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 208s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 208s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 208s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 209s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 209s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 209s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 210s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 210s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 210s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 211s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 211s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 211s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 212s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 212s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 212s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 213s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 213s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 213s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 214s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 214s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 214s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 215s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 215s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 215s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 216s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 216s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 216s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 217s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 217s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 217s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 218s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 218s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 218s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 219s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 219s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 219s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 220s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 220s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 220s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 221s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 221s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 221s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 222s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 222s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 222s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 223s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 223s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 223s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 224s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 224s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 224s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 225s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 225s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 225s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 226s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 226s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 226s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 227s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 227s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 227s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 228s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 228s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 228s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 229s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 229s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 229s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 230s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 230s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 230s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 231s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 231s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 231s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 232s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 232s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 232s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 233s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 233s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 233s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 234s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 234s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 234s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 235s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 235s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 235s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 236s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 236s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 236s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 237s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 237s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 237s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 238s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 238s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 238s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 239s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 239s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 239s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 240s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 240s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 240s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 241s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 241s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 241s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 242s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 242s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 242s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 243s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 243s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 243s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 244s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 244s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 244s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 245s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 245s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 245s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 246s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 246s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 246s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 247s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 247s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 247s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 248s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 248s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 248s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 249s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 249s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 249s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 250s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 250s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 250s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 251s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 251s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 251s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 252s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 252s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 252s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 253s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 253s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 253s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 254s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 254s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 254s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 255s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 255s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 255s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 256s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 256s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 256s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 257s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 257s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 257s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 258s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 258s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 258s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 259s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 259s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 259s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 260s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 260s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 260s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 261s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 261s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 261s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 262s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 262s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 262s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 263s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 263s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 263s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 264s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 264s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 264s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 265s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 265s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 265s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 266s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 266s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 266s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 267s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 267s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 267s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 268s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 268s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 268s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 269s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 269s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 269s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 270s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 270s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 270s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 271s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 271s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 271s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 272s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 272s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 272s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 273s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 273s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 273s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 274s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 274s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 274s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 275s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 275s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 275s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 276s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 276s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 276s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 277s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 277s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 277s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 278s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 278s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 278s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 279s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 279s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 279s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 280s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 280s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 280s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 281s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 281s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 281s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 282s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 282s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 282s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 283s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 283s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 283s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 284s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 284s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 284s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 285s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 285s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 285s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 286s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 286s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 286s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 287s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 287s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 287s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 288s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 288s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 288s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 289s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 289s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 289s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 290s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 290s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 290s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 291s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 291s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 291s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 292s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 292s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 292s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 293s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 293s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 293s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 294s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 294s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 294s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 295s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 295s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 295s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 296s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 296s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 296s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 297s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 297s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 297s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 298s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 298s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 298s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 299s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 299s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 299s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 300s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 300s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 300s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 301s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 301s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 301s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 302s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 302s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 302s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 303s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 303s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 303s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 304s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 304s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 304s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 305s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 305s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 305s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 306s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 306s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 306s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 307s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 307s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 307s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 308s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 308s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 308s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 309s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 309s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 309s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 310s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 310s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 310s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 311s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 311s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 311s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 312s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 312s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 312s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 313s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 313s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 313s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 314s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 314s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 314s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 315s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 315s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 315s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 316s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 316s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 316s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 317s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 317s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 317s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 318s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 318s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 318s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 319s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 319s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 319s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 320s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 320s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 320s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 321s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 321s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 321s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 322s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 322s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 322s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 323s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 323s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 323s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 324s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 324s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 324s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 325s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 325s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 325s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 326s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 326s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 326s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 327s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 327s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 327s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 328s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 328s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 328s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 329s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 329s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 329s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 330s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 330s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 330s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 331s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 331s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 331s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 332s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 332s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 332s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 333s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 333s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 333s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 334s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 334s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 334s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 335s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 335s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 335s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 336s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 336s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 336s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 337s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 337s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 337s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 338s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 338s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 338s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 339s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 339s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 339s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 340s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 340s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 340s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 341s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 341s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 341s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 342s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 342s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 342s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 343s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 343s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 343s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 344s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 344s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 344s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 345s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 345s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 345s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 346s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 346s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 346s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 347s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 347s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 347s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 348s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 348s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 348s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 349s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 349s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 349s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 350s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 350s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 350s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 351s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 351s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 351s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 352s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 352s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 352s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 353s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 353s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 353s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 354s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 354s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 354s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 355s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 355s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 355s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 356s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 356s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 356s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 357s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 357s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 357s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 358s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 358s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 358s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 359s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 359s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 359s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 360s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 360s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 360s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 361s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 361s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 361s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 362s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 362s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 362s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 363s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 363s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 363s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 364s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 364s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 364s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 365s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 365s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 365s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 366s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 366s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 366s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 367s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 367s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 367s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 368s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 368s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 368s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 369s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 369s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 369s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 370s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 370s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 370s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 371s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 371s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 371s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 372s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 372s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 372s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 373s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 373s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 373s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 374s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 374s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 374s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 375s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 375s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 375s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 376s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 376s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 376s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 377s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 377s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 377s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 378s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 378s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 378s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 379s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 379s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 379s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 380s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 380s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 380s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 381s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 381s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 381s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 382s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 382s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 382s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 383s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 383s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 383s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 384s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 384s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 384s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 385s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 385s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 385s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 386s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 386s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 386s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 387s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 387s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 387s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 388s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 388s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 388s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 389s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 389s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 389s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 390s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 390s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 390s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 391s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 391s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 391s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 392s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 392s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 392s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 393s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 393s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 393s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 394s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 394s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 394s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 395s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 395s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 395s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 396s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 396s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 396s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 397s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 397s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 397s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 398s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 398s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 398s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 399s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 399s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 399s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 400s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 400s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 400s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 401s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 401s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 401s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 402s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 402s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 402s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 403s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 403s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 403s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 404s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 404s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 404s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 405s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 405s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 405s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 406s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 406s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 406s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 407s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 407s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 407s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 408s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 408s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 408s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 409s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 409s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 409s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 410s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 410s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 410s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 411s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 411s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 411s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 412s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 412s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 412s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 413s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 413s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 413s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 414s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 414s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 414s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 415s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 415s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 415s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 416s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 416s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 416s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 417s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 417s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 417s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 418s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 418s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 418s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 419s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 419s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 419s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 420s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 420s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 420s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 421s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 421s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 421s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 422s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 422s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 422s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 423s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 423s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 423s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 424s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 424s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 424s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 425s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 425s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 425s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 426s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 426s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 426s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 427s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 427s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 427s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 428s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 428s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 428s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 429s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 429s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 429s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 430s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 430s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 430s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 431s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 431s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 431s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 432s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 432s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 432s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 433s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 433s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 433s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 434s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 434s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 434s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 435s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 435s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 435s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 436s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 436s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 436s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 437s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 437s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 437s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 438s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 438s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 438s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 439s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 439s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 439s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 440s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 440s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 440s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 441s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 441s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 441s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 442s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 442s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 442s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 443s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 443s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 443s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 444s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 444s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 444s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 445s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 445s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 445s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 446s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 446s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 446s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 447s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 447s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 447s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 448s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 448s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 448s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 449s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 449s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 449s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 450s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 450s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 450s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 451s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 451s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 451s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 452s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 452s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 452s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 453s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 453s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 453s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 454s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 454s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 454s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 455s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 455s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 455s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 456s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 456s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 456s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 457s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 457s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 457s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 458s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 458s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 458s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 459s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 459s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 459s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 460s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 460s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 460s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 461s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 461s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 461s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 462s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 462s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 462s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 463s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 463s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 463s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 464s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 464s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 464s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 465s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 465s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 465s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 466s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 466s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 466s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 467s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 467s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 467s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 468s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 468s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 468s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 469s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 469s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 469s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 470s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 470s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 470s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 471s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 471s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 471s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 472s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 472s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 472s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 473s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 473s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 473s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 474s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 474s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 474s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 475s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 475s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 475s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 476s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 476s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 476s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 477s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 477s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 477s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 478s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 478s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 478s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 479s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 479s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 479s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 480s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 480s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 480s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 481s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 481s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 481s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 482s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 482s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 482s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 483s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 483s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 483s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 484s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 484s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 484s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 485s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 485s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 485s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 486s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 486s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 486s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 487s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 487s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 487s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 488s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 488s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 488s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 489s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 489s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 489s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 490s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 490s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 490s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 491s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 491s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 491s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 492s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 492s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 492s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 493s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 493s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 493s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 494s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 494s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 494s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 495s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 495s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 495s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 496s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 496s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 496s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 497s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 497s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 497s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 498s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 498s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 498s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 499s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 499s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 499s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 500s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 500s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 500s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 501s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 501s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 501s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 502s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 502s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 502s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 503s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 503s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 503s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 504s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 504s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 504s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 505s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 505s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 505s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 506s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 506s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 506s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 507s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 507s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 507s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 508s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 508s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 508s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 509s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 509s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 509s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 510s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 510s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 510s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 511s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 511s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 511s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 512s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 512s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 512s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 513s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 513s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 513s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 514s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 514s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 514s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 515s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 515s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 515s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 516s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 516s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 516s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 517s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 517s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 517s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 518s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 518s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 518s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 519s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 519s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 519s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 520s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 520s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 520s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 521s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 521s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 521s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 522s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 522s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 522s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 523s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 523s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 523s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 524s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 524s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 524s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 525s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 525s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 525s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 526s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 526s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 526s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 527s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 527s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 527s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 528s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 528s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 528s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 529s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 529s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 529s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 530s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 530s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 530s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 531s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 531s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 531s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 532s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 532s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 532s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 533s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 533s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 533s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 534s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 534s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 534s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 535s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 535s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 535s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 536s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 536s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 536s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 537s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 537s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 537s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 538s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 538s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 538s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 539s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 539s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 539s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 540s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 540s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 540s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 541s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 541s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 541s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 542s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 542s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 542s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 543s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 543s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 543s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 544s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 544s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 544s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 545s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 545s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 545s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 546s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 546s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 546s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 547s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 547s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 547s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 548s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 548s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 548s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 549s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 549s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 549s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 550s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 550s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 550s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 551s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 551s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 551s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 552s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 552s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 552s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 553s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 553s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 553s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 554s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 554s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 554s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 555s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 555s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 555s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 556s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 556s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 556s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 557s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 557s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 557s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 558s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 558s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 558s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 559s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 559s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 559s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 560s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 560s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 560s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 561s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 561s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 561s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 562s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 562s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 562s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 563s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 563s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 563s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 564s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 564s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 564s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 565s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 565s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 565s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 566s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 566s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 566s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 567s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 567s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 567s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 568s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 568s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 568s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 569s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 569s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 569s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 570s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 570s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 570s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 571s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 571s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 571s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 572s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 572s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 572s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 573s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 573s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 573s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 574s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 574s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 574s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 575s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 575s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 575s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 576s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 576s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 576s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 577s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 577s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 577s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 578s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 578s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 578s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 579s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 579s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 579s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 580s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 580s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 580s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 581s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 581s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 581s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 582s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 582s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 582s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 583s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 583s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 583s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 584s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 584s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 584s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 585s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 585s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 585s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 586s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 586s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 586s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 587s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 587s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 587s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 588s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 588s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 588s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 589s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 589s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 589s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 590s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 590s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 590s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 591s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 591s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 591s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 592s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 592s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 592s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 593s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 593s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 593s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 594s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 594s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 594s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 595s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 595s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 595s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 596s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 596s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 596s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 597s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 597s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 597s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 598s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 598s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 598s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 599s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 599s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 599s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 600s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 600s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 600s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 601s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 601s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 601s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 602s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 602s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 602s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 603s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 603s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 603s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 604s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 604s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 604s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 605s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 605s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 605s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 606s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 606s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 606s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 607s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 607s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 607s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 608s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 608s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 608s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 609s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 609s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 609s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 610s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 610s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 610s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 611s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 611s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 611s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 612s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 612s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 612s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 613s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 613s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 613s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 614s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 614s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 614s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 615s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 615s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 615s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 616s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 616s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 616s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 617s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 617s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 617s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 618s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 618s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 618s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 619s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 619s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 619s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 620s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 620s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 620s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 621s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 621s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 621s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 622s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 622s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 622s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 623s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 623s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 623s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 624s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 624s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 624s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 625s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 625s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 625s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 626s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 626s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 626s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 627s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 627s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 627s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 628s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 628s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 628s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 629s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 629s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 629s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 630s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 630s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 630s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 631s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 631s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 631s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 632s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 632s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 632s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 633s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 633s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 633s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 634s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 634s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 634s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 635s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 635s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 635s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 636s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 636s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 636s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 637s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 637s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 637s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 638s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 638s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 638s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 639s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 639s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 639s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 640s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 640s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 640s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 641s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 641s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 641s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 642s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 642s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 642s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 643s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 643s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 643s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 644s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 644s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 644s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 645s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 645s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 645s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 646s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 646s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 646s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 647s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 647s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 647s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 648s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 648s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 648s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 649s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 649s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 649s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 650s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 650s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 650s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 651s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 651s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 651s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 652s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 652s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 652s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 653s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 653s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 653s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 654s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 654s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 654s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 655s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 655s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 655s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 656s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 656s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 656s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 657s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 657s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 657s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 658s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 658s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 658s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 659s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 659s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 659s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 660s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 660s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 660s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 661s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 661s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 661s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 662s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 662s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 662s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 663s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 663s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 663s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 664s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 664s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 664s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 665s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 665s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 665s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 666s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 666s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 666s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 667s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 667s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 667s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 668s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 668s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 668s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 669s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 669s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 669s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 670s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 670s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 670s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 671s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 671s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 671s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 672s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 672s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 672s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 673s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 673s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 673s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 674s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 674s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 674s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 675s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 675s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 675s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 676s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 676s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 676s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 677s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 677s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 677s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 678s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 678s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 678s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 679s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 679s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 679s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 680s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 680s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 680s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 681s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 681s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 681s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 682s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 682s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 682s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 683s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 683s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 683s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 684s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 684s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 684s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 685s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 685s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 685s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 686s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 686s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 686s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 687s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 687s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 687s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 688s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 688s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 688s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 689s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 689s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 689s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 690s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 690s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 690s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 691s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 691s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 691s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 692s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 692s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 692s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 693s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 693s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 693s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 694s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 694s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 694s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 695s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 695s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 695s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 696s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 696s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 696s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 697s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 697s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 697s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 698s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 698s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 698s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 699s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 699s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 699s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 700s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 700s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 700s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 701s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 701s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 701s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 702s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 702s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 702s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 703s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 703s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 703s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 704s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 704s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 704s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 705s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 705s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 705s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 706s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 706s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 706s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 707s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 707s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 707s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 708s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 708s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 708s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 709s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 709s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 709s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 710s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 710s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 710s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 711s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 711s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 711s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 712s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 712s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 712s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 713s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 713s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 713s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 714s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 714s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 714s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 715s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 715s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 715s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 716s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 716s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 716s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 717s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 717s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 717s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 718s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 718s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 718s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 719s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 719s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 719s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 720s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 720s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 720s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 721s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 721s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 721s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 722s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 722s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 722s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 723s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 723s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 723s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 724s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 724s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 724s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 725s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 725s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 725s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 726s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 726s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 726s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 727s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 727s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 727s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 728s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 728s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 728s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 729s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 729s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 729s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 730s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 730s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 730s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 731s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 731s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 731s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 732s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 732s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 732s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 733s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 733s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 733s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 734s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 734s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 734s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 735s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 735s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 735s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 736s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 736s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 736s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 737s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 737s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 737s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 738s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 738s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 738s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 739s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 739s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 739s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 740s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 740s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 740s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 741s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 741s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 741s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 742s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 742s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 742s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 743s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 743s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 743s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 744s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 744s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 744s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 745s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 745s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 745s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 746s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 746s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 746s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 747s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 747s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 747s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 748s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 748s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 748s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 749s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 749s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 749s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 750s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 750s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 750s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 751s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 751s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 751s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 752s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 752s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 752s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 753s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 753s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 753s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 754s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 754s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 754s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 755s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 755s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 755s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 756s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 756s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 756s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 757s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 757s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 757s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 758s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 758s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 758s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 759s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 759s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 759s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 760s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 760s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 760s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 761s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 761s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 761s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 762s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 762s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 762s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 763s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 763s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 763s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 764s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 764s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 764s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 765s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 765s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 765s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 766s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 766s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 766s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 767s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 767s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 767s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 768s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 768s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 768s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 769s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 769s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 769s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 770s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 770s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 770s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 771s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 771s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 771s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 772s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 772s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 772s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 773s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 773s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 773s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 774s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 774s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 774s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 775s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 775s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 775s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 776s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 776s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 776s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 777s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 777s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 777s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 778s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 778s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 778s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 779s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 779s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 779s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 780s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 780s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 780s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 781s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 781s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 781s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 782s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 782s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 782s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 783s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 783s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 783s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 784s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 784s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 784s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 785s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 785s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 785s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 786s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 786s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 786s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 787s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 787s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 787s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 788s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 788s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 788s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 789s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 789s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 789s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 790s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 790s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 790s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 791s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 791s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 791s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 792s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 792s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 792s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 793s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 793s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 793s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 794s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 794s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 794s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 795s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 795s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 795s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 796s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 796s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 796s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 797s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 797s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 797s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 798s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 798s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 798s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 799s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 799s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 799s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 800s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 800s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 800s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 801s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 801s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 801s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 802s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 802s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 802s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 803s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 803s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 803s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 804s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 804s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 804s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 805s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 805s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 805s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 806s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 806s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 806s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 807s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 807s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 807s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 808s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 808s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 808s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 809s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 809s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 809s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 810s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 810s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 810s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 811s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 811s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 811s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 812s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 812s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 812s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 813s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 813s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 813s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 814s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 814s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 814s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 815s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 815s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 815s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 816s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 816s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 816s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 817s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 817s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 817s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 818s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 818s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 818s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 819s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 819s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 819s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 820s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 820s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 820s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 821s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 821s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 821s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 822s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 822s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 822s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 823s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 823s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 823s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 824s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 824s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 824s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 825s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 825s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 825s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 826s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 826s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 826s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 827s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 827s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 827s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 828s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 828s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 828s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 829s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 829s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 829s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 830s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 830s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 830s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 831s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 831s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 831s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 832s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 832s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 832s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 833s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 833s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 833s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 834s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 834s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 834s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 835s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 835s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 835s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 836s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 836s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 836s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 837s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 837s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 837s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 838s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 838s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 838s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 839s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 839s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 839s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 840s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 840s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 840s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 841s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 841s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 841s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 842s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 842s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 842s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 843s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 843s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 843s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 844s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 844s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 844s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 845s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 845s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 845s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 846s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 846s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 846s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 847s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 847s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 847s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 848s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 848s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 848s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 849s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 849s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 849s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 850s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 850s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 850s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 851s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 851s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 851s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 852s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 852s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 852s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 853s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 853s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 853s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 854s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 854s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 854s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 855s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 855s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 855s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 856s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 856s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 856s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 857s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 857s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 857s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 858s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 858s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 858s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 859s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 859s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 859s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 860s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 860s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 860s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 861s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 861s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 861s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 862s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 862s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 862s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 863s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 863s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 863s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 864s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 864s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 864s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 865s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 865s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 865s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 866s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 866s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 866s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 867s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 867s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 867s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 868s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 868s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 868s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 869s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 869s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 869s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 870s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 870s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 870s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 871s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 871s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 871s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 872s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 872s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 872s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 873s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 873s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 873s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 874s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 874s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 874s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 875s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 875s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 875s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 876s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 876s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 876s
+[ESP32 DEBUG] [AUTO TIMER] Living Room inactivity: 877s
+[ESP32 DEBUG] [AUTO TIMER] Kitchen inactivity: 877s
+[ESP32 DEBUG] [AUTO TIMER] Bedroom inactivity: 877s
+[WS] -1 client, total: 0
+[WS] +1 client, total: 1
+[WS] -1 client, total: 0
+[WS] +1 client, total: 1

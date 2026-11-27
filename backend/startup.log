@@ -1,0 +1,205 @@
+[TELEGRAM] Bot initialized - Security alerts enabled
+[SERVER] http://localhost:3000
+[MySQL] Connection pool established
+[MQTT] Connected
+[FINGERPRINT ADMIN] Authorization request initiated
+[FINGERPRINT ADMIN] Authorization request timeout
+[MQTT] Connected
+[MQTT] Connected
+[FINGERPRINT MQTT] Received fingerprint failed
+[FINGERPRINT MQTT] Received fingerprint success
+[FINGERPRINT MQTT] ID: 1
+[FINGERPRINT MQTT] Confidence: 155
+[FINGERPRINT AUTH]
+Fingerprint ID: 1
+Name: Administrator
+Role: ADMIN
+Confidence: 155
+[FINGERPRINT DOOR] Authorized - unlocking door
+[MQTT] -> home/control/door {"locked":false}
+[FINGERPRINT DOOR] Auto-lock timer started (5 seconds)
+[FINGERPRINT DOOR] Auto-lock timer triggered
+[MQTT] -> home/control/door {"locked":true}
+[FINGERPRINT MQTT] Received fingerprint failed
+[FINGERPRINT MQTT] Received fingerprint success
+[FINGERPRINT MQTT] ID: 1
+[FINGERPRINT MQTT] Confidence: 140
+[FINGERPRINT AUTH]
+Fingerprint ID: 1
+Name: Administrator
+Role: ADMIN
+Confidence: 140
+[FINGERPRINT DOOR] Authorized - unlocking door
+[MQTT] -> home/control/door {"locked":false}
+[FINGERPRINT DOOR] Auto-lock timer started (5 seconds)
+[FINGERPRINT DOOR] Auto-lock timer triggered
+[MQTT] -> home/control/door {"locked":true}
+[WS] +1 client, total: 1
+[FINGERPRINT ADMIN] Authorization request initiated
+[FINGERPRINT MQTT] Received fingerprint success
+[FINGERPRINT MQTT] ID: 1
+[FINGERPRINT MQTT] Confidence: 189
+[FINGERPRINT AUTH]
+Fingerprint ID: 1
+Name: Administrator
+Role: ADMIN
+Confidence: 189
+[FINGERPRINT ADMIN] Authorization granted
+[FINGERPRINT DOOR] Authorized - unlocking door
+[MQTT] -> home/control/door {"locked":false}
+[FINGERPRINT DOOR] Auto-lock timer started (5 seconds)
+[FINGERPRINT DOOR] Auto-lock timer triggered
+[MQTT] -> home/control/door {"locked":true}
+[FINGERPRINT MQTT] Received fingerprint success
+[FINGERPRINT MQTT] ID: 1
+[FINGERPRINT MQTT] Confidence: 146
+[FINGERPRINT AUTH]
+Fingerprint ID: 1
+Name: Administrator
+Role: ADMIN
+Confidence: 146
+[FINGERPRINT DOOR] Authorized - unlocking door
+[MQTT] -> home/control/door {"locked":false}
+[FINGERPRINT DOOR] Auto-lock timer started (5 seconds)
+[FINGERPRINT DOOR] Auto-lock timer triggered
+[MQTT] -> home/control/door {"locked":true}
+[FINGERPRINT ADMIN] Session expired
+[WS] -1 client, total: 0
+[WS] +1 client, total: 1
+[WS] -1 client, total: 0
+[WS] +1 client, total: 1
+[WS] -1 client, total: 0
+[WS] +1 client, total: 1
+[FINGERPRINT ADMIN] Authorization request initiated
+[FINGERPRINT MQTT] Received fingerprint success
+[FINGERPRINT MQTT] ID: 1
+[FINGERPRINT MQTT] Confidence: 83
+[FINGERPRINT AUTH]
+Fingerprint ID: 1
+Name: Administrator
+Role: ADMIN
+Confidence: 83
+[FINGERPRINT ADMIN] Authorization granted
+[FINGERPRINT DOOR] Authorized - unlocking door
+[MQTT] -> home/control/door {"locked":false}
+[FINGERPRINT DOOR] Auto-lock timer started (5 seconds)
+[FINGERPRINT DOOR] Auto-lock timer triggered
+[MQTT] -> home/control/door {"locked":true}
+[MQTT] -> home/control/fingerprint/enroll {"action":"start","fingerprintId":2}
+[FINGERPRINT ENROLLMENT] Started: { fingerprintId: 2, name: 'Test User', role: 'USER' }
+[FINGERPRINT ENROLLMENT] Status update: started
+[FINGERPRINT ENROLLMENT] Status update: place_finger_1
+[FINGERPRINT ENROLLMENT] Status update: first_scan_success
+[FINGERPRINT ENROLLMENT] Status update: remove_finger
+[FINGERPRINT ENROLLMENT] Status update: place_finger_2
+[FINGERPRINT ENROLLMENT] Status update: second_scan_success
+[FINGERPRINT ENROLLMENT] Status update: success
+[FINGERPRINT ENROLLMENT] Success - saving to database
+[FINGERPRINT ENROLLMENT] Database save successful
+[FINGERPRINT MQTT] Received fingerprint success
+[FINGERPRINT MQTT] ID: 2
+[FINGERPRINT MQTT] Confidence: 201
+[FINGERPRINT AUTH]
+Fingerprint ID: 2
+Name: Test User
+Role: USER
+Confidence: 201
+[FINGERPRINT DOOR] Authorized - unlocking door
+[MQTT] -> home/control/door {"locked":false}
+[FINGERPRINT DOOR] Auto-lock timer started (5 seconds)
+[FINGERPRINT DOOR] Auto-lock timer triggered
+[MQTT] -> home/control/door {"locked":true}
+[FINGERPRINT MQTT] Received fingerprint success
+[FINGERPRINT MQTT] ID: 2
+[FINGERPRINT MQTT] Confidence: 137
+[FINGERPRINT AUTH]
+Fingerprint ID: 2
+Name: Test User
+Role: USER
+Confidence: 137
+[FINGERPRINT DOOR] Authorized - unlocking door
+[MQTT] -> home/control/door {"locked":false}
+[FINGERPRINT DOOR] Auto-lock timer started (5 seconds)
+[FINGERPRINT DOOR] Auto-lock timer triggered
+[MQTT] -> home/control/door {"locked":true}
+[FINGERPRINT MQTT] Received fingerprint failed
+[AUTO DEBUG] HTTP request received: ON
+[AUTO DEBUG] Publishing MQTT: topic=home/control/auto payload= {"mode":"on"}
+[AUTO DEBUG] MQTT PUBLISH SUCCESS
+[ESP32 DEBUG] [AUTO MODE] Enabled
+[AUTO DEBUG] HTTP request received: OFF
+[AUTO DEBUG] Publishing MQTT: topic=home/control/auto payload= {"mode":"off"}
+[AUTO DEBUG] MQTT PUBLISH SUCCESS
+[MQTT] -> home/control/fingerprint/delete {"action":"delete","fingerprintId":2}
+[FINGERPRINT DELETION] Started: { fingerprintId: 2, name: 'Test User', role: 'USER' }
+[WS] -1 client, total: 0
+[WS] +1 client, total: 1
+[FINGERPRINT MQTT] Received fingerprint success
+[FINGERPRINT MQTT] ID: 1
+[FINGERPRINT MQTT] Confidence: 183
+[FINGERPRINT AUTH]
+Fingerprint ID: 1
+Name: Administrator
+Role: ADMIN
+Confidence: 183
+[FINGERPRINT DOOR] Authorized - unlocking door
+[MQTT] -> home/control/door {"locked":false}
+[FINGERPRINT DOOR] Auto-lock timer started (5 seconds)
+[FINGERPRINT DOOR] Auto-lock timer triggered
+[MQTT] -> home/control/door {"locked":true}
+[FINGERPRINT MQTT] Received fingerprint failed
+[FINGERPRINT MQTT] Received fingerprint success
+[FINGERPRINT MQTT] ID: 1
+[FINGERPRINT MQTT] Confidence: 114
+[FINGERPRINT AUTH]
+Fingerprint ID: 1
+Name: Administrator
+Role: ADMIN
+Confidence: 114
+[FINGERPRINT DOOR] Authorized - unlocking door
+[MQTT] -> home/control/door {"locked":false}
+[FINGERPRINT DOOR] Auto-lock timer started (5 seconds)
+[WS] -1 client, total: 0
+[WS] +1 client, total: 1
+[FINGERPRINT DOOR] Auto-lock timer triggered
+[MQTT] -> home/control/door {"locked":true}
+[FINGERPRINT DELETION] Timeout - operation failed
+[FINGERPRINT MQTT] Received fingerprint success
+[FINGERPRINT MQTT] ID: 1
+[FINGERPRINT MQTT] Confidence: 183
+[FINGERPRINT AUTH]
+Fingerprint ID: 1
+Name: Administrator
+Role: ADMIN
+Confidence: 183
+[FINGERPRINT DOOR] Authorized - unlocking door
+[MQTT] -> home/control/door {"locked":false}
+[FINGERPRINT DOOR] Auto-lock timer started (5 seconds)
+[FINGERPRINT MQTT] Received fingerprint success
+[FINGERPRINT MQTT] ID: 1
+[FINGERPRINT MQTT] Confidence: 176
+[FINGERPRINT AUTH]
+Fingerprint ID: 1
+Name: Administrator
+Role: ADMIN
+Confidence: 176
+[FINGERPRINT DOOR] Authorized - unlocking door
+[MQTT] -> home/control/door {"locked":false}
+[FINGERPRINT DOOR] Previous auto-lock timer cleared
+[FINGERPRINT DOOR] Auto-lock timer started (5 seconds)
+[FINGERPRINT DOOR] Auto-lock timer triggered
+[MQTT] -> home/control/door {"locked":true}
+[FINGERPRINT MQTT] Received fingerprint success
+[FINGERPRINT MQTT] ID: 2
+[FINGERPRINT MQTT] Confidence: 170
+[FINGERPRINT AUTH]
+Fingerprint ID: 2
+Name: Test User
+Role: USER
+Confidence: 170
+[FINGERPRINT DOOR] Authorized - unlocking door
+[MQTT] -> home/control/door {"locked":false}
+[FINGERPRINT DOOR] Auto-lock timer started (5 seconds)
+[FINGERPRINT DOOR] Auto-lock timer triggered
+[MQTT] -> home/control/door {"locked":true}
+[FINGERPRINT ADMIN] Session expired
